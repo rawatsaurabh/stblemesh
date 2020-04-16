@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/action_App_Setting"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="20dp"
+            android:textStyle="bold" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Network Name"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="15dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytInputedtNetworkName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/network_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_group_setting_background"
+                android:drawableRight="@drawable/ic_edit_black_24dp"
+                android:padding="10dp"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Provisioner Name"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="15dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytInputedtProvisionerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/provisioner_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_group_setting_background"
+                android:drawableRight="@drawable/ic_edit_black_24dp"
+                android:padding="10dp"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/butChangeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Update" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/str_set_vendor_model_as_default"
+                android:textColor="@color/ST_BLUE_DARK"
+                android:textSize="16dp"
+                />
+
+            <Switch
+                android:id="@+id/vendor_generic_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/str_use_reliable_as_default"
+                android:textColor="@color/ST_BLUE_DARK"
+                android:textSize="16dp"
+                />
+
+            <Switch
+                android:id="@+id/reliable_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/str_connect_proxy_using_node_id"
+                android:textColor="@color/ST_BLUE_DARK"
+                android:textSize="16dp"
+                />
+
+            <Switch
+                android:id="@+id/connect_to_Proxy_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/voice_AssistBT"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="Speech Control Settings"
+            android:gravity="start|center"
+            android:padding="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtKeyManagement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_group_setting_background"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:text="Group Key Selection"
+            android:textColor="@color/st_black"/>
+
+        <CheckBox
+            android:id="@+id/enableLogs_chkbox"
+            android:layout_width="wrap_content"
+            android:text="Enable Logs"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:visibility="gone"
+            android:text="Control Group Address"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="15dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lytInputedtGroupAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/group_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_group_setting_background"
+                android:drawableRight="@drawable/ic_edit_black_24dp"
+                android:padding="10dp"
+                android:visibility="gone"
+
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Enter Light On as per language"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="15dp" />
+        <!--<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/onvaluesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
+        <LinearLayout
+            android:id="@+id/lytVoiceTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/edtVoiceTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_group_setting_background"
+                android:drawableRight="@drawable/ic_edit_black_24dp"
+                android:padding="10dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/imgSaveTextVoice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".12"
+                android:padding="2dp"
+                android:src="@drawable/ic_save_black_24dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Enter Light Off as per language"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:id="@+id/lytVoiceTextInputOFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/edtVoiceTextInputOFF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_group_setting_background"
+                android:drawableRight="@drawable/ic_edit_black_24dp"
+                android:padding="10dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/imgSaveTextVoiceOFF"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".12"
+                android:padding="2dp"
+                android:src="@drawable/ic_save_black_24dp"/>
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show User Helper Guide"
+                android:textColor="@color/ST_BLUE_DARK"
+                android:textSize="16dp" />
+
+            <Switch
+                android:id="@+id/switchHelperGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/phoneInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_group_setting_background"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:text="Device Information"
+            android:textColor="@color/st_black"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

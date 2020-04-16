@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!--<androidx.cardview.widget.CardView
+        android:id="@+id/cdDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:cardUseCompatPadding="true">
+
+
+
+    </androidx.cardview.widget.CardView>-->
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sharpwhite"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/lytGroupToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/imageItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <Switch
+                    android:id="@+id/group_toggle_switch"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:theme="@style/SCBSwitch" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/parentTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imageItem"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true">
+
+                <RelativeLayout
+                    android:id="@+id/lytParent_txtBut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/lyt_Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical">
+
+                        <HorizontalScrollView
+                            android:id="@+id/textScrollTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/textViewTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:maxLength="16"
+                                android:singleLine="true"
+                                android:text="Large Text"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/Black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/textViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textScrollTitle"
+                            android:text="Small Text"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="@color/ST_primary_blue"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSubt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewSubtitle"
+                            android:text="Small Text\ndsfgsdfgdfgfgdfggfsdfgdfgsfdgsdfgsfdg\ndfgsdfgsdfgdfg"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/imageButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:gravity="right|center_vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/lytForModels"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:id="@+id/intensityLL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/intensity_IV"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@color/white"
+                                    android:padding="2dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_intensity" />
+
+                                <TextView
+                                    android:id="@+id/intensity_TV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Intensity"
+                                    android:textColor="@color/dark_blue"
+                                    android:textSize="10sp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/vendor_model"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/lightness_IV"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/white"
+                                    android:padding="2dp"
+                                    android:src="@drawable/ic_lightness" />
+
+                                <TextView
+                                    android:id="@+id/lightness_TV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Level"
+                                    android:textColor="@color/dark_blue"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lytVendorModelToggle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imgvendormodel"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/white"
+                                    android:padding="2dp"
+                                    android:src="@drawable/ic_lightness" />
+
+                                <TextView
+                                    android:id="@+id/txtVendorModelToggle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Lightness"
+                                    android:textColor="@color/dark_blue"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:id="@+id/lightessLL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center"
+                                android:layout_toRightOf="@+id/intensityLL"
+                                android:layout_marginRight="10dp"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/LightIV"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_lightness" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Lightness"
+                                    android:textColor="@color/ST_BLUE_DARK"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:id="@+id/ctl_LL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_toRightOf="@+id/lightessLL"
+
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/ctl_IV"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/white"
+                                    android:padding="2dp"
+                                    android:src="@drawable/ctl"
+                                    android:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/ctl_TV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="CTL"
+                                    android:textColor="@color/dark_blue"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/hsl_LL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:orientation="vertical"
+                                android:layout_toRightOf="@+id/ctl_LL"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/Light_HSLIV"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/imghsl" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="HSL"
+                                    android:textColor="@color/ST_BLUE_DARK"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+
+
+
+                        </RelativeLayout>
+
+
+                        <ImageView
+                            android:id="@+id/imageSettings"
+                            android:layout_width="33dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:background="@color/white"
+                            android:padding="2dp"
+                            android:layout_toRightOf="@+id/lytForModels"
+                            android:src="@drawable/ic_settings"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lytParent_txtBut"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/lytGroupToggle"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/lytKeySelection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_vpn_key_black_24dp"/>
+
+                    <TextView
+                        android:id="@+id/txtModelName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="7dp"
+                        android:textColor="@color/ST_GREEN"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:text="Your AppKeys"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/txtInfo"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:rotation="180"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_error_outline_stred_24dp"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/RelativeLayoutDevice"
+        android:background="@color/Grey"/>
+
+</LinearLayout>

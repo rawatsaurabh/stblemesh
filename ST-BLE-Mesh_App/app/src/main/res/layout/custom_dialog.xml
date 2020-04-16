@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_corner"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Model Suported"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textColor="@color/white1"
+        android:background="@color/color_gray_dark"
+        android:paddingTop="10dp"
+        android:paddingBottom="@dimen/activity_horizontal_margin"/>
+
+    <LinearLayout
+        android:id="@+id/belowtitleLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:background="@color/color_gray_light"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/txtModelName"
+            android:layout_weight="1"
+            android:text="Model Name"
+            android:padding="5dp"
+            android:gravity="left"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtModelId"
+            android:layout_weight="1"
+            android:text="Model ID"
+            android:padding="5dp"
+            android:gravity="right"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/modelsRV"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/OKTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:textColor="@color/white1"
+        android:background="@color/color_gray_dark"/>
+
+</LinearLayout>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/color_gray_light">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/linear_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+              android:weightSum="4"
+                android:background="@drawable/rounded_corner_stroke_blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="Proxy" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=":"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/Black" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent">
+                <ImageButton
+                    android:id="@+id/refreshProxy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+
+                    android:background="@drawable/refresh_icon"
+                    android:visibility="gone" />
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchProxy"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"
+                    android:theme="@style/SCBSwitch"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/tvProxy"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent"
+                    android:text="Not Supported"
+                    android:gravity="center"
+                    android:textColor="@color/ST_primary_blue"
+                    android:visibility="gone" />
+        <!--        <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/refreshProxy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:padding="0dp"
+                            android:src="@drawable/refresh_icon"
+                            android:visibility="visible" />
+
+                        <Switch
+                            android:id="@+id/switchProxy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:theme="@style/SCBSwitch"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>-->
+
+
+
+
+                <!--</RelativeLayout>-->
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="4"
+                android:background="@drawable/rounded_corner_stroke_blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="Relay"  />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=":"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/Black" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent">
+                    <ImageButton
+                        android:id="@+id/refreshRelay"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:gravity="center_vertical"
+
+                        android:background="@drawable/refresh_icon"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchRelay"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"
+                    android:theme="@style/SCBSwitch"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/tvRelay"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent"
+                    android:text="Not Supported"
+                    android:gravity="center"
+                    android:textColor="@color/ST_primary_blue"
+                    android:visibility="gone" />
+
+
+
+
+     <!--           <TextView
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="Relay" />-->
+
+       <!--         <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/refreshRelay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?android:selectableItemBackground"
+                            android:clickable="true"
+                            android:padding="0dp"
+                            android:src="@drawable/refresh_icon"
+                            android:visibility="gone" />
+
+                        <Switch
+                            android:id="@+id/switchRelay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:theme="@style/SCBSwitch"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvRelay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Not Supported"
+                        android:textColor="@color/ST_primary_blue"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>-->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="4"
+                android:background="@drawable/rounded_corner_stroke_blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="Friend"  />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=":"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/Black" />
+
+<!--
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="Friend" />-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent">
+                    <ImageButton
+                        android:id="@+id/refreshFriend"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:gravity="center_vertical"
+
+                        android:background="@drawable/refresh_icon"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchFriend"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"
+                    android:theme="@style/SCBSwitch"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/tvFriend"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent"
+                    android:text="Not Supported"
+                    android:gravity="center"
+                    android:textColor="@color/ST_primary_blue"
+                    android:visibility="gone" />
+
+
+               <!-- <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/refreshFriend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?android:selectableItemBackground"
+                            android:clickable="true"
+                            android:padding="0dp"
+                            android:src="@drawable/refresh_icon"
+                            android:visibility="gone" />
+
+                        <Switch
+                            android:id="@+id/switchFriend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:theme="@style/SCBSwitch"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvFriend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Not Supported"
+                        android:textColor="@color/ST_primary_blue"
+                        android:visibility="gone" />
+
+                </RelativeLayout>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="4"
+                android:background="@drawable/rounded_corner_stroke_blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+
+                    android:layout_weight="1.5"
+                    android:text="Low Power" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=":"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/Black" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="0dp">
+
+                    <TextView
+                        android:id="@+id/tvLowPower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/ST_primary_blue"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

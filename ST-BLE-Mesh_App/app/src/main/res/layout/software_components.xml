@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white1"
+    android:clickable="true"
+    tools:context="com.st.bluenrgmesh.view.fragments.other.meshmodels.SoftwareComponents">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits">
+
+
+                <TextView
+                    android:id="@+id/head1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GSON Version - 2.8.0"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url1"
+                    android:text="@string/urllink1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"
+                    android:linksClickable="true"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/strike"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits2">
+
+
+                <TextView
+                    android:id="@+id/head2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Volley Version - 1.1.1"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url2"
+                    android:text="@string/urllink2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:linksClickable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/strike"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits3">
+
+
+                <TextView
+                    android:id="@+id/head3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pulsator4droid Version - 1.0.3"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url3"
+                    android:text="@string/urllink3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:linksClickable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/strike"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits4">
+
+
+                <TextView
+                    android:id="@+id/head4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Circleimageview Version - 1.2.1"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url4"
+                    android:text="@string/urllink4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:linksClickable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/strike"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits5">
+
+
+                <TextView
+                    android:id="@+id/head5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Glide Version - 3.7.0"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url5"
+                    android:text="@string/urllink5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:linksClickable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/strike"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/credits6">
+
+
+                <TextView
+                    android:id="@+id/head6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crashlytics  Fabric Version - 2.9.0"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/url6"
+                    android:text="@string/urllink6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:linksClickable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="15dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

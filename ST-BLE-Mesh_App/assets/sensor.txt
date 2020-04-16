@@ -1,0 +1,80 @@
+
+Final PropertyID for all sensors :
+
+private final static int MEMS_ACCELEROMETER_SENSOR_PROPERTY_ID = 0x2BA1;
+private final static int MEMS_GYROMETER_SENSOR_PROPERTY_ID = 0x2BA2;
+private final static int MEMS_MAGNETOMETER_SENSOR_PROPERTY_ID = 0x2AA1;
+private final static int ENV_TEMPERATURE_SENSOR_ROPERTY_ID = 0x0071;
+private final static int ENV_PRESSURE_SENSOR_ROPERTY_ID = 0x2A6D ;
+private final static int ENV_HUMIDITY_SENSOR_ROPERTY_ID = 0x2A6F ;
+private final static int VOLTAGE_SENSOR_ROPERTY_ID = 0x0005;
+private final static int CURRENT_SENSOR_ROPERTY_ID = 0x0004;
+private final static int POWER_FACTOR_SENSOR_ROPERTY_ID = 0x0072;
+private final static int POWER_ACTIVE_SENSOR_ROPERTY_ID = 0x0073;
+private final static int POWER_REACTIVE_SENSOR_ROPERTY_ID = 0x0074;
+private final static int POWER_APPARENT_SENSOR_ROPERTY_ID = 0x0075;
+private final static int ENERGY_ACTIVE_SENSOR_ROPERTY_ID = 0x0083;
+private final static int ENERGY_REACTIVE_SENSOR_ROPERTY_ID = 0x0084;
+private final static int ENERGY_APPARENT_SENSOR_ROPERTY_ID = 0x0085;
+
+
+
+
+==========================================================================================================================
+
+
+BlueNRG Board Sensors Data Format :
+
+Example :
+
+Ids
+0 = {ApplicationParameters$SensorDataPropertyId@6319} "113 (0x0071)"
+1 = {ApplicationParameters$SensorDataPropertyId@6320} "10861 (0x2a6d)"
+2 = {ApplicationParameters$SensorDataPropertyId@6321} "10863 (0x2a6f)"
+3 = {ApplicationParameters$SensorDataPropertyId@6322} "11169 (0x2ba1)"
+4 = {ApplicationParameters$SensorDataPropertyId@6323} "11170 (0x2ba2)"
+5 = {ApplicationParameters$SensorDataPropertyId@6324} "10913 (0x2aa1)"
+
+Sensor Data
+temp 0 = "44564 (0xae14)16839 (0x41c7)"
+pres 1 = "60400 (0xebf0)17528 (0x4478)"
+humid 2 = "33521 (0x82f1)17008 (0x4270)"
+acce 3 = "65513 (0xffe9)65535 (0xffff)7 (0x0007)0 (0x0000)975 (0x03cf)0 (0x0000)"
+eyro 4 = "64906 (0xfd8a)65535 (0xffff)3500 (0x0dac)0 (0x0000)64486 (0xfbe6)65535 (0xffff)"
+motion 5 = "65226 (0xfeca)65535 (0xffff)65410 (0xff82)65535 (0xffff)65355 (0xff4b)65535 (0xffff)"
+
+===============================================================================================================================
+PropertyID :
+
+0 = {ApplicationParameters$SensorDataPropertyId@6021} "5 (0x0005)"
+1 = {ApplicationParameters$SensorDataPropertyId@6022} "4 (0x0004)"
+2 = {ApplicationParameters$SensorDataPropertyId@6023} "113 (0x0071)"
+3 = {ApplicationParameters$SensorDataPropertyId@6024} "114 (0x0072)"
+4 = {ApplicationParameters$SensorDataPropertyId@6025} "115 (0x0073)"
+5 = {ApplicationParameters$SensorDataPropertyId@6026} "116 (0x0074)"
+6 = {ApplicationParameters$SensorDataPropertyId@6027} "130 (0x0082)"
+7 = {ApplicationParameters$SensorDataPropertyId@6028} "131 (0x0083)"
+8 = {ApplicationParameters$SensorDataPropertyId@6029} "132 (0x0084)"
+
+
+Sensor Data :
+
+0 = "230 (0x00e6)"
+1 = "146 (0x0092)0 (0x0000)"
+2 = "1 (0x0001)"
+3 = "25 (0x0019)0 (0x0000)"
+4 = "13 (0x000d)0 (0x0000)"
+5 = "33 (0x0021)0 (0x0000)"
+6 = "4 (0x0004)0 (0x0000)"
+7 = "2 (0x0002)0 (0x0000)"
+8 = "5 (0x0005)0 (0x0000)"
+
+Voltage(0x0005) : 000000E6   (V)
+current (0x0004): 00000092   (mA)
+power factor (0x0071) : 00000001
+power active  (0x0072): 00000019  (W)
+power reactive (0x0073): 0000000D  (VAR)
+power apparent (0x0074): 00000021 (VA)
+energy active (0x0082): 00000004  (Wh)
+energy reactive (0x0083): 00000002(VARh)
+energy apparent (0x0084): 00000005(VAh)

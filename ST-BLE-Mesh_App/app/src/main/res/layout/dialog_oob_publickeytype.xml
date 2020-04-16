@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_corner"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:text="Select OOB Type Public Key Authentication"
+        android:textColor="@color/dark_blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:gravity="center"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/RelativeLayoutDevice"
+        android:background="@color/Grey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbElectronicURI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electronic URI" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbMachineReadable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2D Machine Readable Code" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbBarCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bar Code" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbNFC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Near Field Communication" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbNmber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbString"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="String" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbOnBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="On Box" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbInsideBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inside Box" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbOnPieceOfPaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="On Piece of Paper" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbInsideManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inside Manual" />
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbOnDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="On Device" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/RelativeLayoutDevice"
+        android:layout_marginTop="5dp"
+        android:background="@color/Grey" />
+
+    <Button
+        android:id="@+id/butPublicKeyAuthSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Confirm Your Authentication Type"
+        android:textColor="@color/white1"
+        android:layout_margin="10dp"
+        android:textSize="10sp" />
+
+</LinearLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/subscriptionCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:cardMaxElevation="8dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lytSubscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFirstHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Subscription"
+                        android:textColor="@color/st_black"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressSubscriber"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:indeterminateTintMode="src_atop"
+                        android:indeterminateTint="@color/ST_primary_blue" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtSubMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Subscription" />
+
+                <LinearLayout
+                    android:id="@+id/lytChildSubscription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytPublication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSubHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Publication"
+                        android:textColor="@color/st_black"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressPublish"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:indeterminateTintMode="src_atop"
+                        android:indeterminateTint="@color/ST_primary_blue" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPubMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Publication Element : 1" />
+
+                <LinearLayout
+                    android:id="@+id/lytChildPublication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytUI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Syncing Composition Data"
+                        android:textColor="@color/st_black"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressUI"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:indeterminateTintMode="src_atop"
+                        android:indeterminateTint="@color/ST_primary_blue"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Updating Indices" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_quickconfigmsg_label"
+                android:textSize="8sp"
+                android:textColor="@color/ST_primary_blue"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/but"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/ST_primary_blue"
+                android:layout_alignParentBottom="true"
+                android:text="Ok" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

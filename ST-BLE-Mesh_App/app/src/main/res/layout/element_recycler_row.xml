@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_gray_light3"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center"
+        android:paddingBottom="9dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="9dp">
+
+        <RelativeLayout
+            android:id="@+id/imageItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/lytSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="1dp">
+
+                <ImageView
+                    android:id="@+id/imageItemDevice"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:hapticFeedbackEnabled = "true"
+                    android:src="@drawable/refresh"
+                    android:visibility="visible" />
+
+                <Switch
+                    android:id="@+id/butSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hapticFeedbackEnabled = "true"
+
+                    android:gravity="center_vertical"
+                    android:theme="@style/SCBSwitch" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lytWarning"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/lytSwitch"
+                android:layout_alignRight="@+id/lytSwitch"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/warning" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/parentTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageItem"
+            android:gravity="center_vertical"
+            android:paddingLeft="7dp">
+
+            <RelativeLayout
+                android:id="@+id/lytParent_txtBut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:id="@+id/lyt_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:id="@+id/textScrollTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textViewTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLength="12"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Large Text"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp" />
+
+                    </HorizontalScrollView>
+
+                    <RelativeLayout
+                        android:id="@+id/lytWarningMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textScrollTitle"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Command error."
+                            android:textColor="@color/HVAC_BAR_MAX"
+                            android:textSize="10sp"
+                            android:textStyle="italic" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/imageButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/lyt_Title"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="2">
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.7">
+
+                        <LinearLayout
+                            android:id="@+id/imageButtons2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/lytAllModels"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:layout_gravity="right|center_vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageSettings"
+                            android:layout_width="33dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:hapticFeedbackEnabled = "true"
+
+                            android:layout_toRightOf="@id/imageButtons2"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_settings" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytModelSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/lyt_Title"
+                    android:gravity="right|center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sensorRecyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:paddingLeft="1dp"
+                        android:paddingRight="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:layout_marginLeft="50dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/lytAccelerometer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgAccelerometer"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:hapticFeedbackEnabled = "true"
+
+                            android:src="@drawable/imgmemsaccelerometerenabled" />
+
+                        <TextView
+                            android:id="@+id/txtAccelerometerValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/str_accelerometer_label"
+                            android:minEms="7"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lytHumidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgHumidity"
+                            android:layout_width="25dp"
+                            android:hapticFeedbackEnabled = "true"
+
+                            android:layout_height="25dp"
+                            android:src="@drawable/imghumidity" />
+
+                        <TextView
+                            android:id="@+id/txtHumidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/str_accelerometer_label"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lytTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgTemperature"
+                            android:hapticFeedbackEnabled = "true"
+
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/imgtemperatureenabled" />
+
+                        <TextView
+                            android:id="@+id/txtTemperatureValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/str_temperature_label"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lytPressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgPressure"
+                            android:layout_width="25dp"
+                            android:hapticFeedbackEnabled = "true"
+
+                            android:layout_height="25dp"
+                            android:src="@drawable/imgpressureenabled" />
+
+                        <TextView
+                            android:id="@+id/txtPressureValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/str_pressure_label"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_Toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgToggle"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/toggle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Toggle"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_Version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgVersion"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/version" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Version"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_Level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgLevel"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/level" />
+
+                        <TextView
+                            android:id="@+id/txtLevelIntensity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Level"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgBattery"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/battery"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/lightessLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/LightIV"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_lightness" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Lightness"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/light_hsl_LL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/Light_HSLIV"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/imghsl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="HSL"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/light_ctl_LL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/Light_CTLIV"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ctl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="CTL"
+                            android:textColor="@color/ST_BLUE_DARK"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imgRightArrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/arrowheadright"
+                        android:padding="5dp"
+                        android:hapticFeedbackEnabled = "true"
+
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/seekDimmAllLights"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/lytParent_txtBut"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

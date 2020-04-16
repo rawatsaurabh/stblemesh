@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_light"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/lytOutputOOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white1"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Output OOB"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rgOutputOOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioBlink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Blink" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioBeep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Beep" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioVibrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vibrate" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioOutputNumeric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Output Numeric" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioOutputAlphanumeric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Output Alphanumeric" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytInputOOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white1"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Input OOB"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+            <RadioGroup
+                android:id="@+id/rgInputOOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioPush"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Push" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioTwist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Twist" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioInputNumeric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Input Numeric" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioInputAlphanumeric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Input Alphanumeric" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytStaticOOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white1"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtStaticOOBHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Static OOB"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical">
+
+                <!---->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtInputStaticOOBValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:hint="Enter the Static OOB Auth Value">
+
+                    <EditText
+                        android:id="@+id/edtEnterAuthKeyOrPublicKey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:gravity="left"
+                        android:textSize="14sp"
+                        android:text="01000000000000000000000000000001"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/refreshData"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".1"
+                    android:src="@drawable/refresh_icon" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="start"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrey"
+                android:text="@string/str_128bit_static_oob_number" />
+
+            <TextView
+                android:id="@+id/txtNordikAuth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hint Nordik : 6E6F72... 32 Char"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrey"/>
+
+            <TextView
+                android:id="@+id/txtAuthKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PTS : 00000000000000000102030405060708"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrey"/>
+
+            <TextView
+                android:id="@+id/txtSTPublicKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ST Public Key : 529AA670D72CD649752ED47352B037E8803B5C60829A5A3CAA2195553BA"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrey"/>
+
+            <include layout="@layout/layout_barcode_camera" />
+
+            <Button
+                android:id="@+id/butStaticOOBAuthenticate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Authenticate" />
+
+            <Button
+                android:id="@+id/butAssignPublicKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Assign Public Key" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/white1"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Attention!!"
+                android:textColor="@color/ST_BLUE_DARK"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtAboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="About OOB Information" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

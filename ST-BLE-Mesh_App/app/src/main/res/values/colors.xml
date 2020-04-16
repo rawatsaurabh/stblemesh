@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="whitecard">#FAF8F9</color>
+    <color name="sharpwhite">#ffffff</color>
+    <color name="white">#00f1f1f1</color>
+    <color name="white1">#ffffff</color>
+    <color name="color_gray_dark">#838383</color>
+    <color name="Grey">#d3d3d3</color>
+    <color name="Black">#222222</color>
+    <color name="Black_light">#393937</color>
+    <color name="Dark_grey">#6F6E69</color>
+    <color name="Red">#ff1414</color>
+    <color name="bluelight">#cbe5f8</color>
+    <color name="bluelight1">#d8ecf9</color>
+    <color name="HVAC_BAR_MIN">#FF6BBEFE</color>D
+    <color name="HVAC_BAR_MAX">#FFFF7070</color>
+    <color name="ST_BLUE_DARK">#002052</color>
+    <color name="ST_RED">#D40079</color>
+    <color name="ST_GREEN">#BBCC01</color>
+    <color name="ST_DARK_GREEN">#003D14</color>
+    <color name="ST_primary_blue">#FF39A9DC</color>
+    <color name="ST_primary_blue_transparent">#0039A9DC</color>
+    <color name="tv">#009688</color>
+    <color name="color_gray_light">#F3F3F3</color>
+    <color name="color_gray_light1">#e0e0e0</color>
+    <color name="color_gray_light3">#e9e9e9</color>
+    <color name="color_gray_light4">#D0D8D8</color>
+    <color name="color_app_background">#ffffff</color>
+    <color name="lightgreen0">#DCEDC8</color>
+    <color name="lightgreen3">#66BB6A</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_white1">#66FFFFFF</color>
+    <color name="strike">#AAAAAA</color>
+
+
+    <color name="colorPrimaryDark">#2088B7</color>
+    <color name="colorAccent">#FF39A9DC</color>
+    <color name="colorPrimary">#2088B7</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="btnColor">#30354b</color>
+    <color name="dark_blue">#002052</color>
+    <color name="st_brown">#5c0915</color>
+    <color name="st_black">#000000</color>
+    <color name="st_background_gray">#DEE3E6</color>
+    <color name="st_background__lightgray">#BAC3C7</color>
+    <color name="bg_gradient_start">#31244e</color>
+    <color name="bg_gradient_end">#6b394c</color>
+    <!-- colors for button style -->
+
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+
+    <!-- colors for tab and screent text -->
+
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+    <color name="red">#DB142A</color>
+    <color name="lightgreen">#8BC34A</color>
+
+</resources>

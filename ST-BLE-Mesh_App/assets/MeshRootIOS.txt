@@ -1,0 +1,133 @@
+{
+  "$schema": "mesh.jsonschema",
+  "IVindex": 1,
+  "groups": [
+    {
+      "name": "All Nodes",
+      "address": "FFFF"
+    },
+    {
+      "name": "Default",
+      "address": "C000"
+    },
+    {
+          "name": "Kitchen",
+          "address": "C001"
+    }
+  ],
+  "appKeys": [
+    {
+      "boundNetKey": 0,
+      "key": "1d3762ac5a24af4256bd0d4e669593b6",
+      "index": 0
+    }
+  ],
+  "nodes": [
+    {
+      "name": "New Node 01",
+      "UUID": "f81d4fae7dec4b-53a1-54fa-c78f-bae7da",
+      "blacklisted": false,
+      "configComplete": true,
+      "deviceKey": "bdb8b09602728f-2dbc-9f8b-4115-051e74",
+      "elements": [
+        {
+          "unicastAddress": "2",
+          "element Name": "Element Name 01",
+          "models": [
+            {
+              "modelId": "000",
+              "publish": {
+                "address": "4"
+              },
+              "subscribe": [
+                "C000"
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "unicastAddress": "3",
+          "element Name": "Element Name 02",
+          "models": [
+            {
+              "modelId": "000",
+              "publish": {
+                "address": "4"
+              },
+              "subscribe": [
+                "C000"
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "unicastAddress": "4",
+          "element Name": "Element Name 03",
+          "models": [
+            {
+              "modelId": "000",
+              "publish": {
+                "address": "4"
+              },
+              "subscribe": [
+                "C000"
+              ]
+            }
+          ],
+          "index": 0
+        }
+      ],
+      "publishAddress": 0
+    },
+    {
+      "name": "New Node 02",
+      "UUID": "f81d4fae7dec4b-53a1-54f6-f38f-bae7da",
+      "blacklisted": false,
+      "configComplete": true,
+      "deviceKey": "b2f92d9b7ea4fa-a97d-ca6c-99b2-f2f2a1",
+      "elements": [
+        {
+          "unicastAddress": "5",
+          "element Name": "Element Name 01",
+          "models": [
+            {
+              "modelId": "000",
+              "publish": {
+                "address": "2"
+              },
+              "subscribe": [
+                "C001"
+              ]
+            }
+          ],
+          "index": 0
+        },
+        {
+          "unicastAddress": "6",
+          "element Name": "Element Name 02",
+          "models": [
+            {
+              "modelId": "000",
+              "publish": {
+                "address": "2"
+              },
+              "subscribe": [
+                "C001"
+              ]
+            }
+          ],
+          "index": 0
+        }
+      ],
+      "publishAddress": 0
+    }
+  ],
+  "netKeys": [
+    {
+      "key": "216575299202ad30d23a26d2ce903c67",
+      "index": 0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:id="@+id/lytParentRow"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/txtParentLyt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:layout_marginTop="7dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtRow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Text Here"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <Switch
+            android:id="@+id/switchBut"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lytParentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtParentLyt"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</RelativeLayout>

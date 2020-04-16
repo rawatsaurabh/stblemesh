@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="value_request_timeout">1800000</integer><!-- in milliseconds -->
+    <!--<integer name="max_level_value">65535</integer>&lt;!&ndash; in milliseconds &ndash;&gt;-->
+    <integer name="SENSOR_MODEL_TEMPERATURE_PROPERTYID">79</integer>
+    <integer name="SENSOR_MODEL_TEMP_PROPERTYID">113</integer>
+    <integer name="SENSOR_MODEL_PRESSURE_PROPERTYID">10861</integer>
+    <integer name="SENSOR_MODEL_HUMIDITY_PROPERTYID">10863</integer>
+    <integer name="SENSOR_MODEL_ACCELEROMETER_PROPERTYID">11169</integer>
+    <integer name="SENSOR_MODEL_GYRO_PROPERTYID">11170</integer>
+    <integer name="SENSOR_MODEL_MAGNETO_PROPERTYID">10913</integer>
+    <integer name="SENSOR_MODEL_DEFAULT_PROPERTYID">-1</integer>
+
+    <integer name="SENSOR_MODEL_VOLTAGE_PROPERTYID">5</integer>
+    <integer name="SENSOR_MODEL_CURRENT_PROPERTYID">4</integer>
+    <integer name="SENSOR_MODEL_POWER_FACTOR_PROPERTYID">114</integer>
+    <integer name="SENSOR_MODEL_POWER_ACTIVE_PROPERTYID">115</integer>
+    <integer name="SENSOR_MODEL_POWER_REACTIVE_PROPERTYID">116</integer>
+    <integer name="SENSOR_MODEL_POWER_APPARENT_PROPERTYID">117</integer>
+    <integer name="SENSOR_MODEL_ENERGY_ACTIVE_PROPERTYID">131</integer>
+    <integer name="SENSOR_MODEL_ENERGY_REACTIVE_PROPERTYID">132</integer>
+    <integer name="SENSOR_MODEL_ENERGY_APPARENT_PROPERTYID">133</integer>
+    <integer name="SENSOR_MODEL_TOF_PROPERTYID">10879</integer>
+
+    <!--Provisioned Screen Cases-->
+    <integer name="PROVISIONED_NODE_REFRESH">0</integer>
+    <integer name="PROVISIONED_PROXY_UPDATE">1</integer>
+    <integer name="PROVISIONED_FEATURES_UPDATE">2</integer>
+    <integer name="PROVISIONED_NODE_REMOVED">3</integer>
+    <integer name="PROVISIONED_NODE_ADDED">5</integer>
+    <integer name="PROVISIONED_NODE_HEARTBEAT">6</integer>
+
+
+    <!--App Key Screen Case in Element Setting-->
+    <integer name="CUSTOM_APP_KEY_BIND">1</integer>
+    <integer name="CUSTOM_APP_KEY_UNBIND">2</integer>
+    <integer name="APP_KEY_DELETE">3</integer>
+    <!--Element Settings Cases-->
+    <integer name="ELEMENT_SUBSCRIPTION_CASE">4</integer>
+    <integer name="ELEMENT_PUBLICATION_CASE">5</integer>
+    <integer name="ELEMENT_APPKEY_DIALOG_CASE">6</integer>
+    <integer name="ELEMENT_NAME_UPDATE_CASE">7</integer>
+
+
+    <!--view-type selection for Public Key Selection Type-->
+    <integer name="STATIC_NEAR_FIELD_COMMUNICATION">0</integer>
+    <integer name="STATIC_BAR_CODE">1</integer>
+    <integer name="STATIC_D_MACHINE_READABLE_CODE">2</integer>
+    <integer name="STATIC_ELECTRONIC_URI">3</integer>
+    <integer name="STATIC_NUMBER">4</integer>
+    <integer name="STATIC_STRING">5</integer>
+    <integer name="STATIC_ON_BOX">6</integer>
+    <integer name="STATIC_INSIDE_BOX">7</integer>
+    <integer name="STATIC_ON_PIECE_OF_PAPER">8</integer>
+    <integer name="STATIC_INSIDE_MANUAL">9</integer>
+    <integer name="STATIC_ON_DEVICE">10</integer>
+
+</resources>

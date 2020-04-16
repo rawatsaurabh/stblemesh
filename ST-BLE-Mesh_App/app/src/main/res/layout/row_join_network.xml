@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layNetwork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom=".5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtNetworkName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft=".5dp"
+            android:layout_weight="1"
+            android:background="@color/ST_BLUE_DARK"
+            android:gravity="center"
+            android:padding="7dp"
+            android:textSize="10sp"
+            android:textColor="@color/sharpwhite" />
+
+        <TextView
+            android:id="@+id/txtNetworkUUID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight=".5dp"
+            android:layout_weight="1.5"
+            android:background="@color/ST_BLUE_DARK"
+            android:gravity="center"
+            android:padding="7dp"
+            android:textSize="10sp"
+            android:textColor="@color/sharpwhite" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

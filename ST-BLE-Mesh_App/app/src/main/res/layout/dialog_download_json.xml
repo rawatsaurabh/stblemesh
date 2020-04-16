@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txtInvitationHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_sync_label"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/txtInvitationCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_warning_sync_msg_label"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/butOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_ok_label"
+            android:layout_marginTop="15dp"
+            android:background="@color/ST_primary_blue"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="11sp"
+            android:text="@string/str_note_sync_label"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+</RelativeLayout>
+

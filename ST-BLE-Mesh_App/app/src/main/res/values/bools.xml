@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--/* Please make the below cloud functionality variable true in order to access your cloud api.
+    You also need to provide your server URL in the file "Strings.xml" in following variable ->
+    <string name="URL_BASE">https://www.mycloudmeshapp.net</string>
+    You can also evaluate this functionality using our app available on app store  */-->
+
+    <bool name="bool_isCloudFunctionality">true</bool>
+
+    <bool name="bool_enableFabric">true</bool>
+
+    <!--The following bool used in offline mode for testing api. Default set to false.-->
+    <bool name="bool_readFromAssets">false</bool>
+    <bool name="bool_readFromExternalMemory">true</bool>
+
+    <!--False Case : Element Size should be considered as 1 -->
+    <!--True Case : Element Size should be considered as dynamic -->
+    <bool name="bool_isElementFunctionality">true</bool>
+
+    <!--False Case : In case Normal Provisioning is Supported -->
+    <!--True Case : In case Faster Provisioning is supported, groupId and AppKey shared
+    <! in provisioning connection unlike in proxy connection -->
+    <bool name="bool_isFasterProvisioningSupported">false</bool>
+    <bool name="isDebugMode">true</bool>
+    <bool name="bool_controlRssiCallBack">true</bool>
+    <bool name="bool_showMacAddress">true</bool>
+    <bool name="bool_sendCrashDump">true</bool>
+    <bool name="bool_packetSniffing">true</bool>
+    <bool name="bool_PTS">true</bool>
+    <bool name="bool_isIntroScreenEnabled">true</bool>
+
+    <!--True Case : Enable GUI for auto provisioning functionality support.-->
+    <bool name="bool_isAutoProvisioning">false</bool>
+    <bool name="bool_isLCMODE">false</bool>
+
+</resources>

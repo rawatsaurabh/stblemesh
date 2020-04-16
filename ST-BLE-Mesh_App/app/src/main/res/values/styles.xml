@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ST_primary_blue</item>
+        <item name="colorPrimaryDark">@color/ST_primary_blue</item>
+        <item name="colorAccent">@color/ST_primary_blue</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Base.Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/ST_primary_blue</item>
+        <item name="colorPrimaryDark">@color/ST_primary_blue</item>
+        <item name="colorAccent">@color/ST_primary_blue</item>
+    </style>
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/lightgreen3</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/HVAC_BAR_MAX</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/HVAC_BAR_MAX</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="TextLabelNew" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/HVAC_BAR_MIN</item>
+        <item name="android:textSize">18sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/HVAC_BAR_MIN</item>
+        <item name="colorControlNormal">@color/HVAC_BAR_MIN</item>
+        <item name="colorControlActivated">@color/HVAC_BAR_MIN</item>
+    </style>
+
+    <!-- Floating Button -->
+    <style name="FabTheme" parent="Widget.Design.FloatingActionButton">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="colorAccent">@color/color_gray_light</item>
+    </style>
+
+    <!-- Application theme. -->
+
+    <style name="ProgressDialogTheme" parent="android:Theme.Holo.Dialog">
+        <item name="android:alertDialogStyle">@style/CustomProgressDialogStyle</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="CustomProgressDialogStyle">
+        <item name="android:bottomBright">@color/transparent</item>
+        <item name="android:bottomDark">@color/transparent</item>
+        <item name="android:bottomMedium">@color/transparent</item>
+        <item name="android:centerBright">@color/transparent</item>
+        <item name="android:centerDark">@color/transparent</item>
+        <item name="android:centerMedium">@color/transparent</item>
+        <item name="android:fullBright">@color/transparent</item>
+        <item name="android:fullDark">@color/transparent</item>
+        <item name="android:topBright">@color/transparent</item>
+        <item name="android:topDark">@color/transparent</item>
+    </style>
+</resources>

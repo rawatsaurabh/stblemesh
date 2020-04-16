@@ -1,0 +1,794 @@
+{
+  "$schema": "mesh.jsonschema",
+  "IVindex": 0,
+  "IVupdate": 0,
+  "appKeys": [
+    {
+      "appKeyBytes": [
+        65,
+        -10,
+        -20,
+        81,
+        89,
+        -23,
+        -5,
+        122,
+        -40,
+        34,
+        78,
+        68,
+        123,
+        -28,
+        110,
+        15
+      ],
+      "boundNetKey": 0,
+      "index": 0,
+      "key": "41f6ec5159e9fb7ad8224e447be46e0f",
+      "name": "Home Network",
+      "oldKey": "41f6ec5159e9fb7ad8224e447be46e0f"
+    }
+  ],
+  "groups": [
+    {
+      "address": "c000",
+      "isChecked": false,
+      "name": "Lights"
+    },
+    {
+      "address": "c004",
+      "elements": [
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0002"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0003"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0004"
+        },
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0005"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0006"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0007"
+        }
+      ],
+      "isChecked": false,
+      "name": "Group 0"
+    },
+    {
+      "address": "c005",
+      "elements": [
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0002"
+        },
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0003"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0002",
+          "unicastAddress": "0004"
+        },
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0005"
+        },
+        {
+          "index": 0,
+          "isChecked": true,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0006"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "subscribe": [
+                "c000"
+              ]
+            }
+          ],
+          "parentNodeAddress": "0005",
+          "unicastAddress": "0007"
+        }
+      ],
+      "isChecked": false,
+      "name": "Group 1"
+    }
+  ],
+  "meshName": "Light House",
+  "meshUUID": "72C6BE40444D2081BEAADDAD4E3CC21C",
+  "netKeys": [
+    {
+      "index": 0,
+      "key": "110304d8a47144d773833bfef1d0ef87",
+      "minSecurity": "high",
+      "name": "Home Network",
+      "netKeyBytes": [
+        17,
+        3,
+        4,
+        -40,
+        -92,
+        113,
+        68,
+        -41,
+        115,
+        -125,
+        59,
+        -2,
+        -15,
+        -48,
+        -17,
+        -121
+      ],
+      "phase": 0
+    }
+  ],
+  "nodes": [
+    {
+      "UUID": "f81d4fae7dec4b53a15403c08fbae7da",
+      "address": "DA:E7:BA:8F:C0:03",
+      "blacklisted": false,
+      "configComplete": true,
+      "configured": "true",
+      "deviceKey": "34e4d249805bdf2a656a747b3f44c733",
+      "elements": [
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isCh ecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": true,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": false,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0002"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": true,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0003"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": true,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0004"
+        }
+      ],
+      "group": "false",
+      "in_range": "true",
+      "isChecked": false,
+      "m_address": "0002",
+      "name": "Device 01",
+      "numberOfElements": 3,
+      "publishAddress": 0,
+      "publish_address": "null",
+      "subgroup": "false",
+      "subtitle": "",
+      "title": "Device 01",
+      "type": "0"
+    },
+    {
+      "UUID": "f81d4fae7dec4b53a15409448fbae7da",
+      "address": "DA:E7:BA:8F:44:09",
+      "blacklisted": false,
+      "configComplete": true,
+      "configured": "true",
+      "deviceKey": "ffa11bc03925167b20ff20a6f6593c3b",
+      "elements": [
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": true,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0005"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isChecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": true,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0006"
+        },
+        {
+          "index": 0,
+          "isChecked": false,
+          "isPublished": false,
+          "isSubscribed": false,
+          "models": [
+            {
+              "isC hecked": true,
+              "modelId": "0000",
+              "publish": {
+                "address": "c000",
+                "isChecked": false
+              },
+              "publishingAddressList": [
+                {
+                  "address": "0002",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0003",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0004",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0005",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0006",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "0007",
+                  "isChecked": false,
+                  "name": "Element"
+                },
+                {
+                  "address": "c000",
+                  "isChecked": true,
+                  "name": "Lights"
+                },
+                {
+                  "address": "c004",
+                  "isChecked": false,
+                  "name": "Group 0"
+                },
+                {
+                  "address": "c005",
+                  "isChecked": false,
+                  "name": "Group 1"
+                }
+              ],
+              "subscribe": [
+                "Lights",
+                "Group 0",
+                "Group 1"
+              ]
+            }
+          ],
+          "unicastAddress": "0007"
+        }
+      ],
+      "group": "false",
+      "in_range": "true",
+      "isChecked": false,
+      "m_address": "0005",
+      "name": "Device 02",
+      "numberOfElements": 3,
+      "publishAddress": 0,
+      "publish_address": "null",
+      "subgroup": "false",
+      "subtitle": "",
+      "title": "Device 02",
+      "type": "0"
+    }
+  ]
+}

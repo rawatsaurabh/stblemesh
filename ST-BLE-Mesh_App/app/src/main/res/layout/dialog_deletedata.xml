@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txtMsgOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_delete_mesh_data"
+            android:textColor="@color/color_gray_dark"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtMsgTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/str_setting_reset"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:id="@+id/butLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/butCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ST_primary_blue"
+                android:text="Cancel"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/butOk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ST_primary_blue"
+                android:text="OK"
+                android:textColor="#FFF" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutMeshName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editMeshName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:hint="@string/str_mesh_name_label" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/butBack"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_undo_black_24dp" />
+
+                <Button
+                    android:id="@+id/butGo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:backgroundTint="@color/ST_primary_blue"
+                    android:text="Go Create Network"
+                    android:textColor="#FFF" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/butImportLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/butMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt"
+                android:backgroundTint="@color/ST_primary_blue"
+                android:text="@string/str_importfrommail_label"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/butCloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt"
+                android:backgroundTint="@color/ST_primary_blue"
+                android:text="@string/str_importfromcloud_label"
+                android:textColor="#FFF" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+

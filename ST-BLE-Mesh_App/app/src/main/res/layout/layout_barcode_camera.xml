@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lytBarCodeScanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtBarCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan QR Code"
+            android:textSize="18sp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_marginTop="10dp"
+            android:gravity="center"/>
+
+        <RelativeLayout
+            android:id="@+id/lytCamera"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+            <SurfaceView
+                android:id="@+id/surfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:id="@+id/viewRedLine"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/ST_RED"/>
+
+            <ImageView
+                android:id="@+id/imgBarCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/barcode"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

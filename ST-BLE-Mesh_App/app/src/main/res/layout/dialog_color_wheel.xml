@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+android:layout_margin="5dp"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/pickedColor"
+        android:layout_width="match_parent"
+        android:layout_height="41dp" />
+
+
+    <com.st.bluenrgmesh.colorpicker.ColorPickerView
+        android:id="@+id/colorPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+         />
+
+    <LinearLayout
+        android:id="@+id/HSL_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.6"
+                android:text="Hue"
+
+                android:textColor="@color/Black"
+                android:textSize="13sp"
+                android:visibility="visible" />
+
+            <SeekBar
+                android:id="@+id/hueseekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:max="32768" />
+
+            <EditText
+                android:id="@+id/hueET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:focusable="false"
+                android:imeOptions="actionDone"
+                android:text="C"
+                android:textColor="@color/btnColor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:orientation="horizontal"
+
+            android:paddingBottom="10dp">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.6"
+                android:text="Saturation"
+
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <SeekBar
+                android:id="@+id/saturationseekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.9"
+                android:max="20000" />
+
+            <EditText
+                android:id="@+id/saturationET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:focusable="false"
+                android:imeOptions="actionDone"
+                android:text="T"
+                android:textColor="@color/btnColor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.6"
+                android:text="Lightness"
+
+                android:textColor="@color/Black"
+                android:textSize="13sp"
+                android:visibility="visible" />
+
+            <SeekBar
+                android:id="@+id/LightnessseekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.9"
+                android:max="100" />
+
+            <EditText
+                android:id="@+id/LightnessET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:focusable="false"
+                android:imeOptions="actionDone"
+                android:text="L"
+                android:textColor="@color/btnColor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
