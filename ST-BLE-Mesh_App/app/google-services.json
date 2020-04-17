@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "191118560282",
+    "firebase_url": "https://st-ble-mesh.firebaseio.com",
+    "project_id": "st-ble-mesh",
+    "storage_bucket": "st-ble-mesh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191118560282:android:b187b976c008e3ac",
+        "android_client_info": {
+          "package_name": "com.st.bluenrgmesh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191118560282-k4t9q93h73p1jtrgm8gdl9ek4dtskovd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-6M-NDdUD-lvusmuuKqxZUjYKuxs7x7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191118560282-k4t9q93h73p1jtrgm8gdl9ek4dtskovd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
