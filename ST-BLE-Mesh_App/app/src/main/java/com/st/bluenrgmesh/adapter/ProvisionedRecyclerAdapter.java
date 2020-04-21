@@ -87,6 +87,7 @@ import java.util.Map;
 
 public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<ProvisionedRecyclerAdapter.ViewHolder>  {
 
+    private  String from="";
     private RecyclerView.RecycledViewPool viewPool;
     private String className;
     private  boolean is_command_error=false;
@@ -130,7 +131,7 @@ public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<Provisioned
     }
 
 
-    public ProvisionedRecyclerAdapter(Context context, String className,  ArrayList<Nodes> provisionedNodes, String selected_element_address, boolean is_command_error, IRecyclerViewHolderClicks l) {
+    public ProvisionedRecyclerAdapter(String from,Context context, String className,  ArrayList<Nodes> provisionedNodes, String selected_element_address, boolean is_command_error, IRecyclerViewHolderClicks l) {
 
         this.context = context;
         this.className = className;
@@ -141,6 +142,7 @@ public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<Provisioned
 
         viewPool = new RecyclerView.RecycledViewPool();
         setHasStableIds(true);
+        this.from = from;
     }
 
     @Override
@@ -420,7 +422,7 @@ public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<Provisioned
             gridLayoutManager = new NpaGridLayoutManager(context, 1, LinearLayoutManager.VERTICAL, false);
             holder.elementsRecyclerView.setLayoutManager(gridLayoutManager);
 
-            elementsRecyclerAdapter = new ElementsRecyclerAdapter(context, className, node, is_command_error, nodPosition, element_Address, new ElementsRecyclerAdapter.IRecyclerViewHolderClicks() {
+            elementsRecyclerAdapter = new ElementsRecyclerAdapter(from,context, className, node, is_command_error, nodPosition, element_Address, new ElementsRecyclerAdapter.IRecyclerViewHolderClicks() {
                 @Override
                 public void onClickRecyclerItem(final String element_Address, final int element_pos) {
                     ((MainActivity) context).runOnUiThread(new Runnable() {

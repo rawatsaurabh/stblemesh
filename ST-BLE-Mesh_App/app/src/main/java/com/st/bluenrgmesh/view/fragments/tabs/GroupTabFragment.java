@@ -173,34 +173,40 @@ public class GroupTabFragment extends BaseFragment {
         // Log.e("Dinesh==>","insinde updatejson");
 
         ((MainActivity)getActivity()).updateJsonData();
-        groups.clear();
-        try {
 
-           // Log.e("Group Size==>","before==>"+((MainActivity)getActivity()).meshRootClass.getGroups().size());
-            if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0)
-            {
-                boolean isGroupPresent = false;
-                if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0) {
-                    for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
-                        if(((MainActivity)getActivity()).meshRootClass.getGroups().get(i).getAddress().equalsIgnoreCase("FFFF")) {
-                            isGroupPresent = true;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    groups.clear();
+
+                    // Log.e("Group Size==>","before==>"+((MainActivity)getActivity()).meshRootClass.getGroups().size());
+                    if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0)
+                    {
+                        boolean isGroupPresent = false;
+                        if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0) {
+                            for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
+                                if(((MainActivity)getActivity()).meshRootClass.getGroups().get(i).getAddress().equalsIgnoreCase("FFFF")) {
+                                    isGroupPresent = true;
+                                }
+                            }
+                        }
+
+                        if(!isGroupPresent)
+                        {
+                            addAllNodesOptionToGroup();
+                        }
+                        //Log.e("Group Size==>","before2222==>"+((MainActivity)getActivity()).meshRootClass.getGroups().size());
+
+                        for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
+                            groups.add(((MainActivity)getActivity()).meshRootClass.getGroups().get(i));
+                            //  Log.e("Group Size==>","after==>"+groups.size());
+
                         }
                     }
-                }
-
-                if(!isGroupPresent)
-                {
-                    addAllNodesOptionToGroup();
-                }
-                //Log.e("Group Size==>","before2222==>"+((MainActivity)getActivity()).meshRootClass.getGroups().size());
-
-                for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
-                    groups.add(((MainActivity)getActivity()).meshRootClass.getGroups().get(i));
-                  //  Log.e("Group Size==>","after==>"+groups.size());
-
-                }
-            }
-           // Log.e("Group Size==>","after==>"+groups.size());
+                    // Log.e("Group Size==>","after==>"+groups.size());
 
     /*        new Handler().postDelayed(new Runnable() {
                 @Override
@@ -208,10 +214,16 @@ public class GroupTabFragment extends BaseFragment {
                     updateGroupRecycler(Utils.getSelectedModel(getActivity()));
                 }
             }, 500);*/
-    
-        }catch (Exception e){}
-    }
 
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, 300);
+
+    }
 
     public static Fragment newInstance() {
 
@@ -242,76 +254,91 @@ public class GroupTabFragment extends BaseFragment {
         //loader.show();
         this.typeModel = typeModel;
         updateJsonData();
-        try {
-            if (((MainActivity)getActivity()).meshRootClass.getGroups() == null || ((MainActivity)getActivity()).meshRootClass.getGroups().size() == 0) {
-                swiperefresh.setRefreshing(false);
-                groups.clear();
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        groupRecyclerAdapter.notifyDataSetChanged();
-                    }
-                });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-                return;
-            }else
-            {
-                groups.clear();
+                try {
+                    if (((MainActivity)getActivity()).meshRootClass.getGroups() == null || ((MainActivity)getActivity()).meshRootClass.getGroups().size() == 0) {
+                        swiperefresh.setRefreshing(false);
+                        groups.clear();
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                groupRecyclerAdapter.notifyDataSetChanged();
+                            }
+                        });
 
-                if(groupRecyclerAdapter == null)
-                {
-                    setGroupAdapter();
-                }
-                else {
-
-                    if(Utils.isNodesExistInMesh(getActivity(), ((MainActivity)getActivity()).meshRootClass))
+                        return;
+                    }else
                     {
-                        boolean isGroupPresent = false;
-                        if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0)
-                        {
-                            for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
+                        groups.clear();
 
-                                if(((MainActivity)getActivity()).meshRootClass.getGroups().get(i).getAddress().equalsIgnoreCase("FFFF"))
+                        if(groupRecyclerAdapter == null)
+                        {
+                            setGroupAdapter();
+                        }
+                        else {
+
+                            if(Utils.isNodesExistInMesh(getActivity(), ((MainActivity)getActivity()).meshRootClass))
+                            {
+                                boolean isGroupPresent = false;
+                                if(((MainActivity)getActivity()).meshRootClass.getGroups().size() > 0)
                                 {
-                                    isGroupPresent = true;
+                                    for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
+
+                                        if(((MainActivity)getActivity()).meshRootClass.getGroups().get(i).getAddress().equalsIgnoreCase("FFFF"))
+                                        {
+                                            isGroupPresent = true;
+                                        }
+                                    }
+
+                                }
+
+                                if(!isGroupPresent)
+                                {
+                                    addAllNodesOptionToGroup();
+                                }
+
+                                for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
+                                    groups.add(((MainActivity)getActivity()).meshRootClass.getGroups().get(i));
+                                }
+
+                                if(typeModel == null)
+                                {
+                                    groupRecyclerAdapter.fromWhere(getString(R.string.str_vendormodel_label));
+                                }
+                                else
+                                {
+                                    groupRecyclerAdapter.fromWhere(typeModel);
                                 }
                             }
 
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    groupRecyclerAdapter.notifyDataSetChanged();
+
+
+                                    //loader.hide();
+                                }
+                            });
                         }
 
-                        if(!isGroupPresent)
-                        {
-                            addAllNodesOptionToGroup();
-                        }
-
-                        for (int i = 0; i < ((MainActivity)getActivity()).meshRootClass.getGroups().size(); i++) {
-                            groups.add(((MainActivity)getActivity()).meshRootClass.getGroups().get(i));
-                        }
-
-                        if(typeModel == null)
-                        {
-                            groupRecyclerAdapter.fromWhere(getString(R.string.str_vendormodel_label));
-                        }
-                        else
-                        {
-                            groupRecyclerAdapter.fromWhere(typeModel);
-                        }
                     }
+                } catch (Exception e) {
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            groupRecyclerAdapter.notifyDataSetChanged();
-                            //loader.hide();
-                        }
-                    });
+                    return;
                 }
 
             }
-        } catch (Exception e) {
+        },400);
 
-            return;
-        }
+
+
+
+
         //loader.hide();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -320,6 +347,5 @@ public class GroupTabFragment extends BaseFragment {
             }
         },1000);
     }
-
 
 }

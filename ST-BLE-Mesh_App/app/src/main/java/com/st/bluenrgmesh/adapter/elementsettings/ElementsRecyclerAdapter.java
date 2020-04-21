@@ -113,6 +113,7 @@ import java.util.Map;
 public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecyclerAdapter.ViewHolder> {
 
     private static final int LIGHTING_LIGHTNESS_MAX = 65535;
+    private  String from;
     private ModelsData modelsData;
     //private final ArrayList<String> models_list = new ArrayList<String>();
     private String classname;
@@ -143,8 +144,8 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
     private String data_name;
     private String element_name = "Element";
 HashMap<String,ArrayList<Model>>hashMap_model = new HashMap<>();
-    public ElementsRecyclerAdapter(Context context, String classname, Nodes node, boolean is_command_error, int command_position, String element_Address, IRecyclerViewHolderClicks iRecyclerViewHolderClicks) {
-
+    public ElementsRecyclerAdapter(String from,Context context, String classname, Nodes node, boolean is_command_error, int command_position, String element_Address, IRecyclerViewHolderClicks iRecyclerViewHolderClicks) {
+this.from = from;
         this.classname = classname;
         this.context = context;
         this.node = node;
@@ -431,7 +432,7 @@ HashMap<String,ArrayList<Model>>hashMap_model = new HashMap<>();
 
                 if (Utils.getProxyNode(context) != null) {
                     //check activated key w.r.t element
-                    Utils.toggleDevice(context, v, event, elements.get(position), listener, position);
+                    Utils.toggleDevice(from,context, v, event, elements.get(position), listener, position,selectedModel);
 
                 } else {
                     Utils.showToast(context, "Trying to connect with proxy device.");

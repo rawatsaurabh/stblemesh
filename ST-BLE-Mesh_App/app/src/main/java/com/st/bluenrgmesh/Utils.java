@@ -2434,8 +2434,8 @@ public class Utils {
     }
 
 
-    public static void toggleDevice(final Context context, final View v, MotionEvent event,
-                                    final Element element, final ElementsRecyclerAdapter.IRecyclerViewHolderClicks listener, final int ele_pos) {
+    public static void toggleDevice(String from ,final Context context, final View v, MotionEvent event,
+                                    final Element element, final ElementsRecyclerAdapter.IRecyclerViewHolderClicks listener, final int ele_pos,String selectedmodel) {
 
         final String address = element.getUnicastAddress();
 
@@ -2484,34 +2484,71 @@ public class Utils {
                             }
                         }
 
-                        if (Utils.isVendorModelCommand(context)) {
-                            if (Utils.isReliableEnabled(context)) {
-                                network.advise(mGroupReadCallback);
-                            }
-                            UserApplication.trace("NavBar Device toggle  model vendor model selected");
-                            network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
-                                    Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
-                                            new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
-                            ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
-                        } else {
-                            try {
-                                UserApplication.trace("NavBar Device toggle generic model selected");
-                                state = onCommand ? ApplicationParameters.OnOff.ENABLED : ApplicationParameters.OnOff.DISABLED;
-                                ApplicationParameters.TID tid = new ApplicationParameters.TID(Utils.getTIDValue(context));
-                                // ApplicationParameters.Time transitionTime = ApplicationParameters.Time.NONE;
-                                // ApplicationParameters.Delay del = new ApplicationParameters.Delay(20);
+                        if (!from.equalsIgnoreCase("Model")) {
+                            if (Utils.isVendorModelCommand(context)) {
+                                if (Utils.isReliableEnabled(context)) {
+                                    network.advise(mGroupReadCallback);
+                                }
 
-                                UserApplication app = (UserApplication) context.getApplicationContext();
-                                network.getOnOffModel().setGenericOnOff((Utils.isReliableEnabled(context))
-                                        , new ApplicationParameters.Address(Integer.parseInt(address)), //=>new ApplicationParameters.Address(mAddress.mValue),
-                                        state,
-                                        tid,
-                                        null,
-                                        null,
-                                        (Utils.isReliableEnabled(context)) ? mOnOffCallback : null);
-                                ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Generic OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                                UserApplication.trace("NavBar Device toggle  model vendor model selected");
+                                network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
+                                        Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
+                                                new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
+                                ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                            } else {
+                                try {
+                                    UserApplication.trace("NavBar Device toggle generic model selected");
+                                    state = onCommand ? ApplicationParameters.OnOff.ENABLED : ApplicationParameters.OnOff.DISABLED;
+                                    ApplicationParameters.TID tid = new ApplicationParameters.TID(Utils.getTIDValue(context));
+                                    // ApplicationParameters.Time transitionTime = ApplicationParameters.Time.NONE;
+                                    // ApplicationParameters.Delay del = new ApplicationParameters.Delay(20);
+
+                                    UserApplication app = (UserApplication) context.getApplicationContext();
+                                    network.getOnOffModel().setGenericOnOff((Utils.isReliableEnabled(context))
+                                            , new ApplicationParameters.Address(Integer.parseInt(address)), //=>new ApplicationParameters.Address(mAddress.mValue),
+                                            state,
+                                            tid,
+                                            null,
+                                            null,
+                                            (Utils.isReliableEnabled(context)) ? mOnOffCallback : null);
+                                    ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Generic OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }else{
+                            if (Utils.getSelectedModel(context).equalsIgnoreCase("Vendor Model")) {
+                                if (Utils.isReliableEnabled(context)) {
+                                    network.advise(mGroupReadCallback);
+                                }
+
+                                UserApplication.trace("NavBar Device toggle  model vendor model selected");
+                                network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
+                                        Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
+                                                new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
+                                ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                            } else {
+                                try {
+                                    UserApplication.trace("NavBar Device toggle generic model selected");
+                                    state = onCommand ? ApplicationParameters.OnOff.ENABLED : ApplicationParameters.OnOff.DISABLED;
+                                    ApplicationParameters.TID tid = new ApplicationParameters.TID(Utils.getTIDValue(context));
+                                    // ApplicationParameters.Time transitionTime = ApplicationParameters.Time.NONE;
+                                    // ApplicationParameters.Delay del = new ApplicationParameters.Delay(20);
+
+                                    UserApplication app = (UserApplication) context.getApplicationContext();
+                                    network.getOnOffModel().setGenericOnOff((Utils.isReliableEnabled(context))
+                                            , new ApplicationParameters.Address(Integer.parseInt(address)), //=>new ApplicationParameters.Address(mAddress.mValue),
+                                            state,
+                                            tid,
+                                            null,
+                                            null,
+                                            (Utils.isReliableEnabled(context)) ? mOnOffCallback : null);
+                                    ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Generic OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+
+
                             }
                         }
                     }
@@ -6372,6 +6409,29 @@ public class Utils {
         recyclerView.setLayoutAnimation(controller);
         recyclerView.setAdapter(provisionedRecyclerAdapter);
         recyclerView.scheduleLayoutAnimation();
+    }
+    public static void setVendorModelTabCommand(Context context, boolean setReliable) {
+        if (context == null)
+            return;
+        AppSharedPrefs sp = AppSharedPrefs.getInstance(context);
+        sp.put(context.getString(R.string.key_isVendorModelTabCommand), setReliable);
+    }
+
+    public static boolean isVendorModelTabCommand(Context context) {
+        if (context == null)
+            return false;
+        try {
+            AppSharedPrefs sp = AppSharedPrefs.getInstance(context);
+            //return (boolean) sp.get(context.getString(R.string.key_isVendorModelCommand));
+            Object obj = sp.get(context.getString(R.string.key_isVendorModelTabCommand));
+            if (obj != null) {
+                return (boolean) sp.get(context.getString(R.string.key_isVendorModelTabCommand));
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 

@@ -207,7 +207,7 @@ public class ProvisionedTabFragment extends BaseFragment {
         itemAnimator.setRemoveDuration(100);
         recyclerView.setItemAnimator(itemAnimator);*/
 
-        provisionedRecyclerAdapter = new ProvisionedRecyclerAdapter(getActivity(), new ProvisionedTabFragment().getClass().getName(), nodes, selected_element_address, is_command_error, new ProvisionedRecyclerAdapter.IRecyclerViewHolderClicks() {
+        provisionedRecyclerAdapter = new ProvisionedRecyclerAdapter("node",getActivity(), new ProvisionedTabFragment().getClass().getName(), nodes, selected_element_address, is_command_error, new ProvisionedRecyclerAdapter.IRecyclerViewHolderClicks() {
             @Override
             public void onClickRecyclerItem(View v, int position, String item, String mAutoAddress, boolean isSelected) {
                 recyclerView.stopScroll();

@@ -108,7 +108,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:padding="5dp"
                 android:text="Quick Provisioning"
                 android:textColor="@color/Black"
@@ -120,9 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_corner_stroke_blue"
-                android:gravity="center"
                 android:padding="10dp"
-                android:text="Continue Provisioning" />
+                android:text="Fast Provisioning" />
 
         </LinearLayout>
 
@@ -139,7 +137,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Capabilities"
+                android:text="Advanced Provisioning"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Show Capabilities"
                 android:textColor="@color/Black"
                 android:textSize="16sp" />
 
@@ -148,6 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_stroke_blue"
                 android:padding="10dp"
                 android:text="Capabilities Information" />
 
@@ -156,6 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_stroke_blue"
                 android:padding="10dp"
                 android:text="Use Input OOB" />
 
@@ -164,6 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_stroke_blue"
                 android:padding="10dp"
                 android:text="Use Output OOB" />
 
@@ -172,6 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_stroke_blue"
                 android:padding="10dp"
                 android:text="Use Static OOB" />
 

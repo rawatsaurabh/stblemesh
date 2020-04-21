@@ -155,9 +155,18 @@ public class ModelBindingService extends IntentService
                 if (isQuickProcess ? modelName.contains("GENERIC ONOFF SERVER") ||
                         modelName.contains("GENERIC LEVEL SERVER") ||
                         modelName.contains("LIGHT LIGHTNESS SERVER") ||
+                        modelName.contains("LIGHT LIGHTNESS SETUP SERVER") ||
                         modelName.contains("SENSOR MODEL SERVER") ||
-                        modelName.contains("SENSOR MODEL SERVER") ||
+                        modelName.contains("SENSOR SETUP SERVER") ||
                         modelName.contains("LIGHT HSL SERVER") ||
+                        modelName.contains("LIGHT HSL SETUP SERVER") ||
+                        modelName.contains("LIGHT CTL SERVER") ||
+                        modelName.contains("LIGHT CTL SETUP SERVER") ||
+                        modelName.contains("LIGHT CTL TEMPERATURE SERVER") ||
+                        modelName.contains("LIGHT LC SETUP") ||
+                        modelName.contains("LIGHT LC SETUP SERVER") ||
+                        modelName.contains("GENERIC POWER ON ONOFF SERVER") ||
+                        modelName.contains("GENERIC POWER ON SETUP SERVER") ||
                         modelName.contains("ST VENDOR SERVER") : true)
                 {
                     String replaceModelName = modelName.replace(" ", "_");

@@ -110,7 +110,7 @@ public class ModelTabFragment extends BaseFragment {
         recyclerView.setVisibility(View.VISIBLE);
         NpaGridLayoutManager gridLayoutManager = new NpaGridLayoutManager(getActivity(), 1, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
-        provisionedRecyclerAdapter = new ProvisionedRecyclerAdapter(getActivity(), new ModelTabFragment().getClass().getName(), nodes, null, false, new ProvisionedRecyclerAdapter.IRecyclerViewHolderClicks() {
+        provisionedRecyclerAdapter = new ProvisionedRecyclerAdapter("model",getActivity(), new ModelTabFragment().getClass().getName(), nodes, null, false, new ProvisionedRecyclerAdapter.IRecyclerViewHolderClicks() {
 
             @Override
             public void onClickRecyclerItem(View v, int position, String item, String mAutoAddress, boolean isSelected) {
@@ -169,15 +169,28 @@ public class ModelTabFragment extends BaseFragment {
         Utils.DEBUG(">> Model type selected : " + modelTypeSelected);
 
         if (modelTypeSelected == null) {
+            Utils.setVendorModelTabCommand(getContext(), true);
+            Utils.setSelectedModel(getActivity(), "Vendor Model");
+
             Utils.updateActionBarForFeatures(getActivity(), new ModelTabFragment().getClass().getName(), getString(R.string.str_vendormodel_label));
         } else {
             if (modelTypeSelected.equals(getString(R.string.str_genericmodel_label))) {
+                Utils.setVendorModelTabCommand(getContext(), false);
+                Utils.setSelectedModel(getActivity(), "Generic Model");
+
                 Utils.updateActionBarForFeatures(getActivity(), new ModelTabFragment().getClass().getName(), getString(R.string.str_genericmodel_label));
             } else if (modelTypeSelected.equalsIgnoreCase(getString(R.string.str_lighting_model_label))) {
+                Utils.setVendorModelTabCommand(getContext(), false);
+
                 Utils.updateActionBarForFeatures(getActivity(), new ModelTabFragment().getClass().getName(), getString(R.string.str_lighting_model_label));
             } else if (modelTypeSelected.equalsIgnoreCase(getString(R.string.str_vendormodel_label))) {
+                Utils.setVendorModelTabCommand(getContext(), true);
+                Utils.setSelectedModel(getActivity(), "Vendor Model");
+
                 Utils.updateActionBarForFeatures(getActivity(), new ModelTabFragment().getClass().getName(), getString(R.string.str_vendormodel_label));
             } else if (modelTypeSelected.equalsIgnoreCase(getString(R.string.str_sensormodel_label))) {
+                Utils.setVendorModelTabCommand(getContext(), false);
+
                 Utils.updateActionBarForFeatures(getActivity(), new ModelTabFragment().getClass().getName(), getString(R.string.str_sensormodel_label));
             }
 
@@ -247,5 +260,15 @@ public class ModelTabFragment extends BaseFragment {
         }
 
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

@@ -113,10 +113,20 @@ public class SubscriptionService extends IntentService {
                         //if(modelName.contains("SERVER") && !modelName.contains("HEALTH") && !modelName.contains("CONFIGURATION"))  /*replace this case w.r.t model id check*/
                         if (modelName.contains("GENERIC ONOFF SERVER") ||
                                 modelName.contains("GENERIC LEVEL SERVER") ||
-                                modelName.contains("ST VENDOR SERVER") ||
                                 modelName.contains("LIGHT LIGHTNESS SERVER") ||
+                                modelName.contains("LIGHT LIGHTNESS SETUP SERVER") ||
+                                modelName.contains("SENSOR MODEL SERVER") ||
+                                modelName.contains("SENSOR SETUP SERVER") ||
                                 modelName.contains("LIGHT HSL SERVER") ||
-                                modelName.contains("SENSOR MODEL SERVER") ) {
+                                modelName.contains("LIGHT HSL SETUP SERVER") ||
+                                modelName.contains("LIGHT CTL SERVER") ||
+                                modelName.contains("LIGHT CTL SETUP SERVER") ||
+                                modelName.contains("LIGHT CTL TEMPERATURE SERVER") ||
+                                modelName.contains("LIGHT LC SETUP") ||
+                                modelName.contains("LIGHT LC SETUP SERVER") ||
+                                modelName.contains("GENERIC POWER ON ONOFF SERVER") ||
+                                modelName.contains("GENERIC POWER ON SETUP SERVER") ||
+                                modelName.contains("ST VENDOR SERVER") ) {
                             Utils.DEBUG(">--> sub -- " + modelName);
                             String replaceModelName = modelName.replace(" ", "_");
                             subscriptionThread = new SubscriptionMgmtThread(element.getUnicastAddress(), replaceModelName, modelId);

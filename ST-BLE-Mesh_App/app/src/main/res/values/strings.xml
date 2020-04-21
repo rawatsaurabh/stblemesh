@@ -423,5 +423,6 @@
     <string name="device_info">Device Information</string>
     <string name="node_head">Node Tab</string>
     <string name="node_msg">All the Provisioned and Configured Nodes appears here. Control your device and Change its Configuration  from the Element Setting icon.</string>
+    <string name="key_isVendorModelTabCommand">KEY VENDOR ENABLED Tab</string>
 
 </resources>
