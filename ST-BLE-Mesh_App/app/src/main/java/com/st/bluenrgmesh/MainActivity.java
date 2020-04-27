@@ -64,6 +64,7 @@ import android.os.Message;
 import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1832,6 +1833,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
                 node.setRssi(String.valueOf(device.getmRssi()));
                 node.setmOOBInformation(device.getOOBInformation());
                 node.setName(name);
+                //Log.e("Dinesh==>MainActivity ",name);
                 node.setChecked(false);
 
                 new Handler().post(new Runnable() {

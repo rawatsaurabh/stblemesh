@@ -2210,6 +2210,8 @@ public class Utils {
             for (int i = 0; i < meshRootClass.getNodes().size(); i++) {
                 if (meshRootClass.getNodes().get(i) != null && meshRootClass.getNodes().get(i).getElements().get(0).getUnicastAddress().equalsIgnoreCase(deviceAddr)) {
                     meshRootClass.getNodes().get(i).setName(s);
+                    //Log.e("Dinesh==>Utils 2213  ",s);
+
                     for (int j = 0; j < meshRootClass.getNodes().get(i).getElements().size(); j++) {
                         meshRootClass.getNodes().get(i).getElements().get(j).setParentNodeName(s);
                     }
@@ -3277,6 +3279,7 @@ public class Utils {
         node.setElements(elements);
         node.setUUID(currentProvisner.getUUID().toString());
         node.setName(currentProvisner.getProvisionerName());
+       // Log.e("Dinesh==>Utils 3282  ",currentProvisner.getProvisionerName());
         node.setBlacklisted(false);
         node.setConfigComplete(false);
         //node.setConfigured("false");
@@ -4753,6 +4756,8 @@ public class Utils {
                         nodeSelected.setFeatures(meshRootClass.getNodes().get(i).getFeatures());
                         nodeSelected.setGroup(meshRootClass.getNodes().get(i).getGroup());
                         nodeSelected.setName(meshRootClass.getNodes().get(i).getName());
+                      //  Log.e("Dinesh==>Utils 4759  ",meshRootClass.getNodes().get(i).getName());
+
                         nodeSelected.setPid(meshRootClass.getNodes().get(i).getPid());
                         nodeSelected.setRssi(meshRootClass.getNodes().get(i).getRssi());
                         nodeSelected.setTitle(meshRootClass.getNodes().get(i).getTitle());
@@ -5135,6 +5140,7 @@ public class Utils {
             Provisioner provisioner = new Provisioner();
             provisioner.setUUID(Utils.getProvisionerUUID(context));
             provisioner.setProvisionerName(deviceName);
+            //Log.e("Dinesh==> 5141",deviceName);
             provisioner.setUnicastAddress(String.valueOf(((MainActivity) context).provisionerUnicastLowAddress));
 
             ArrayList<AllocatedGroupRange> allocatedGroupRanges = new ArrayList<>();

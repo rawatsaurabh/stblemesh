@@ -24,7 +24,7 @@
     <bool name="bool_isFasterProvisioningSupported">false</bool>
     <bool name="isDebugMode">true</bool>
     <bool name="bool_controlRssiCallBack">true</bool>
-    <bool name="bool_showMacAddress">true</bool>
+    <bool name="bool_showMacAddress">false</bool>
     <bool name="bool_sendCrashDump">true</bool>
     <bool name="bool_packetSniffing">true</bool>
     <bool name="bool_PTS">true</bool>

@@ -58,7 +58,7 @@
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Node 01"
+                android:text="Mesh Node "
                 android:textColor="@color/Dark_grey"
                 android:textSize="15sp" />
 

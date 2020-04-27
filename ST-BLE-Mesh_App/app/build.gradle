@@ -14,7 +14,7 @@ android {
         applicationId "com.st.bluenrgmesh"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 116
+        versionCode 117
         versionName "1.12.000_Beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

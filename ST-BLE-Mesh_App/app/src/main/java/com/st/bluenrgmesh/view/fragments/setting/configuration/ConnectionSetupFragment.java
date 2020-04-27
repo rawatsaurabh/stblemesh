@@ -312,7 +312,7 @@ try {
             //((MainActivity)getActivity()).unAdviseCallbacks();
             Utils.setSubscriptionAddressOnProvsioning(getActivity(), "");
             Utils.setPublicationAddressOnProvsioning(getActivity(), "");
-            configureDevice(node.getAddress());
+            configureDevice(node.getAddress(),node.getName());
         }
         else
         {
@@ -321,10 +321,15 @@ try {
         }
     }
 
-    public void configureDevice(String bt_addr) {
+    public void configureDevice(String bt_addr,String name) {
         ((MainActivity)getActivity()).isProvisioningProcessLive = true;
-        ((MainActivity)getActivity()).mAutoName = DEFAULT_NAME;
-        mAutoName = DEFAULT_NAME;
+        if(!name.equalsIgnoreCase("")){
+            ((MainActivity) getActivity()).mAutoName = name;
+            mAutoName = name;
+        }else {
+            ((MainActivity) getActivity()).mAutoName = DEFAULT_NAME;
+            mAutoName = DEFAULT_NAME;
+        }
         setAutoParameters(bt_addr);
         //mProgress.show(MainActivity.this, "Provisioning . . . : ", true);
         updateProgressBar(0);
@@ -688,6 +693,8 @@ try {
         if (mAutoDevice != null) {
             currentNode.setM_address(mAutoDevice.getAddress() + "");
             currentNode.setName(mAutoDevice.getName());
+           // Log.e("Dinesh==>connectionsetup ",mAutoDevice.getName());
+
             currentNode.setTitle(mAutoDevice.getName());
         }
         currentNode.setType("0");

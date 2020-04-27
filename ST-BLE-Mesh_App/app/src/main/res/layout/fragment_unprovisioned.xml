@@ -31,12 +31,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/white1"
+            android:textColor="@color/tab_indicator_gray"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/imgBle"
             android:paddingLeft="35dp"
             android:paddingRight="35dp"
-            android:textSize="12sp"
+            android:textSize="13sp"
             android:text="@string/str_warnin_msg_device_you_wish_to_provision_label" />
 
     </pl.bclogic.pulsator4droid.library.PulsatorLayout>

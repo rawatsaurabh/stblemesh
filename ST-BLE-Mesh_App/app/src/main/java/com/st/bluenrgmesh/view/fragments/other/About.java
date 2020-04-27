@@ -79,7 +79,7 @@ public class About extends BaseFragment {
       private Boolean isexperimentalVersion = true;
 
     //private String rc_buildnum =  "14.04.20" ;
-    private String rc_buildnum =  "3" ;
+    private String rc_buildnum =  "4" ;
     public String buildVersion = (!isexperimentalVersion) ? "" : "RC_" + rc_buildnum;
     private View view;
     private AppDialogLoader loader;

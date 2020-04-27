@@ -305,8 +305,8 @@ public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<Provisioned
         holder.textViewTitle.setText(provisionedNodes.get(position).getName());
         if (provisionedNodes != null && provisionedNodes.size() > 0) {
             data_name = provisionedNodes.get(position).getName();
-            if (data_name.length() > 12) {
-                node_name = data_name.substring(0, 12) + "\u2026";
+            if (data_name.length() > 15) {
+                node_name = data_name.substring(0, 15) + "\u2026";
             } else {
                 node_name = data_name;
             }
