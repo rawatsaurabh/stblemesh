@@ -85,7 +85,7 @@ public class IntroViewPagerAdapter extends PagerAdapter {
         ImageView imgSlide = layoutScreen.findViewById(R.id.intro_img);
         //TextView title = layoutScreen.findViewById(R.id.intro_title);
         //TextView description = layoutScreen.findViewById(R.id.intro_description);
-        Glide.with(mContext).load(mListScreen.get(position).getScreenImg()).into(imgSlide);
+      /*  Glide.with(mContext).load(mListScreen.get(position).getScreenImg()).into(imgSlide);*/
 
         //title.setText(mListScreen.get(position).getTitle());
         //description.setText(mListScreen.get(position).getDescription());

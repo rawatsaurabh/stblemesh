@@ -44,6 +44,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -56,6 +58,7 @@ import android.widget.Button;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.st.bluenrgmes.CustomUtilities;
 import com.st.bluenrgmesh.MainActivity;
 import com.st.bluenrgmesh.R;
 import com.st.bluenrgmesh.UserApplication;
@@ -74,7 +77,10 @@ import com.st.bluenrgmesh.view.fragments.tabs.ProvisionedTabFragment;
 
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import androidx.core.content.FileProvider;
 
 
 public class ExchangeConfigFragment extends BaseFragment {
@@ -85,10 +91,12 @@ public class ExchangeConfigFragment extends BaseFragment {
     Button export_config_button;
     Button delete_config_button;
     private View view;
+    Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.import_export_config_new, container, false);
+        context = container.getContext();
 
         Utils.updateActionBarForFeatures(getActivity(), new ExchangeConfigFragment().getClass().getName());
         loader = AppDialogLoader.getLoader(getActivity());
@@ -193,7 +201,8 @@ public class ExchangeConfigFragment extends BaseFragment {
                 if (vibrator != null) vibrator.vibrate(40);
 
                 ((MainActivity)getActivity()).onBackPressed();
-                Utils.sendDataOverMail(getActivity());
+                sendDataToOtherDevice();
+               /* Utils.sendDataOverMail(getActivity());*/
             }
         });
 
@@ -351,5 +360,26 @@ public class ExchangeConfigFragment extends BaseFragment {
         );
         // Adding request to request queue
         UserApplication.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+    }
+
+    public void sendDataToOtherDevice(){
+        CustomUtilities customUtilities = new CustomUtilities();
+        customUtilities.createFileStorage(context);
+
+        String filePath = context.getFilesDir().toString() + "/stblueNrg/" + context.getResources().getString(R.string.FILE_bluenrg_mesh_json);
+        File file = new File(filePath);
+
+        Uri uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_FROM_BACKGROUND);
+        intent.setType("text/plain");
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "BLE Mesh Config File");
+        //   intent.setComponent(ComponentName("com.android.bluetooth", "com.android.bluetooth.opp.BluetoothOppLauncherActivity"));
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(intent);
     }
 }

@@ -45,6 +45,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -289,6 +290,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
     private File LogDirectory;
     private File logFileName = null;
     private Boolean fileloggingEnable = true;
+    BluetoothConnectionReceiver bluetoothConnectionReceiver;
     private final BroadcastReceiver bluetoothReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
@@ -421,6 +423,8 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
         if (gpsReceiver != null) {
             registerReceiver(gpsReceiver, new IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION));
         }
+        bluetoothConnectionReceiver = new BluetoothConnectionReceiver();
+        registerReceiver(bluetoothConnectionReceiver, new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECTED));
 
     }
 
@@ -940,6 +944,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
                 unregisterReceiver(internetReceiver);
                 unregisterReceiver(bluetoothReceiver);
                 unregisterReceiver(gpsReceiver);
+                unregisterReceiver(bluetoothConnectionReceiver);
             }
             JsonUtil.ClearLoggerFile(this);
             if (HeartBeatCallbacks.heartBeatMap != null) {
@@ -2484,7 +2489,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
 
         imgError = (ImageView) proxydialog.findViewById(R.id.imgError);
         gifImageView = (ImageView) proxydialog.findViewById(R.id.gif);
-        Glide.with(this).load(R.drawable.gifsimpleloader).asGif().into(gifImageView);
+       /* Glide.with(this).load(R.drawable.gifsimpleloader).asGif().into(gifImageView);*/
         //Glide.with(this).load(R.drawable.gifsimpleloader).into(gifImageView);
 
         txt = (TextView) proxydialog.findViewById(R.id.txtErrorMsg);
