@@ -197,6 +197,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -1874,11 +1875,14 @@ public class Utils {
     }
 
     public static void updateProvisionerNetAppKeys(Context context, MeshRootClass meshRootClass, String meshName, String meshUUID, String appKeysStr, String networkKey, boolean isNewJoiner) {
-
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         ArrayList<NetKey> arrayList = new ArrayList<>();
         NetKey netKey = new NetKey();
         netKey.setIndex(0);
         netKey.setKey(networkKey);
+        netKey.setTimestamp("" + timestamp);
+        netKey.setMinSecurity("High");
+        netKey.setPhase(0);
         arrayList.add(netKey);
 
         ArrayList<AppKey> appKeys = new ArrayList<>();
@@ -1890,10 +1894,14 @@ public class Utils {
         appKeys.add(appKey);
 
         try {
+            Timestamp timestamp1 = new Timestamp(System.currentTimeMillis());
             if (meshRootClass == null) {
 
                 MeshRootClass localRootClass = new MeshRootClass();
-                localRootClass.setSchema("mesh.jsonschema");
+                localRootClass.setSchema("http://json-schema.org/draft-04/schema#");
+                localRootClass.setId("http://www.bluetooth.com/specifications/assigned-numbers/mesh-profile/cdb-schema.json#");
+                localRootClass.setVersion("1.0.0");
+                localRootClass.setTimestamp(""+timestamp1);
                 localRootClass.setMeshUUID(meshUUID);
                 localRootClass.setMeshName(meshName);
                 localRootClass.setAppKeys(appKeys);
@@ -1902,8 +1910,12 @@ public class Utils {
                 meshRootClass = localRootClass;
             } else {
 
-                meshRootClass.setSchema("mesh.jsonschema");
+                meshRootClass.setSchema("http://json-schema.org/draft-04/schema#");
                 meshRootClass.setMeshUUID(meshUUID);
+                meshRootClass.setId("http://www.bluetooth.com/specifications/assigned-numbers/mesh-profile/cdb-schema.json#");
+                meshRootClass.setVersion("1.0.0");
+                meshRootClass.setTimestamp(""+timestamp1);
+
                 meshRootClass.setMeshName(meshName);
                 meshRootClass.setIVindex(0);//TODO : take it from the new JSON
                 meshRootClass.getAppKeys().add(appKey);
@@ -4647,7 +4659,7 @@ public class Utils {
         appKey.setOldKey("");
         appKeys.add(appKey);
 
-        meshRootClass1.setMeshUUID("");
+        //meshRootClass1.setMeshUUID("");
         meshRootClass1.setNetKeys(netKeys);
         meshRootClass1.setAppKeys(appKeys);
         meshRootClass1.setProvisioners(null);

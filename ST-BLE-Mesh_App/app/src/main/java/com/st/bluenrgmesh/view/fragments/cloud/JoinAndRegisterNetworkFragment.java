@@ -113,7 +113,7 @@ public class JoinAndRegisterNetworkFragment extends BaseFragment {
             if(meshRootClass == null)
             {
                 meshRootClass = new MeshRootClass();
-                meshRootClass.setMeshUUID("");
+                //meshRootClass.setMeshUUID("");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -211,7 +211,7 @@ public class JoinAndRegisterNetworkFragment extends BaseFragment {
                                 MeshRootClass meshRootClass1 = new MeshRootClass();
                                 meshRootClass1 = Utils.createEmptyDataForNewJoiner(meshRootClass1);
                                 meshRootClass = meshRootClass1;
-                                meshRootClass.setMeshUUID(createInvitationData.getResponseMessage());
+                                //meshRootClass.setMeshUUID(createInvitationData.getResponseMessage());
                                 Utils.setBLEMeshDataToLocal(getActivity(), ParseManager.getInstance().toJSON(meshRootClass));
                                 /*Utils.DEBUG("Mesh Data After Join : " + ParseManager.getInstance().toJSON(meshRootClass));
                                 Utils.showToast(getActivity(), getString(R.string.str_network_joined_success_label));

@@ -44,8 +44,17 @@ import java.io.Serializable;
 
 
 public class NetKey implements Serializable {
-
     private String name;
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    private String timestamp;
 
     public String getName() { return this.name; }
 
