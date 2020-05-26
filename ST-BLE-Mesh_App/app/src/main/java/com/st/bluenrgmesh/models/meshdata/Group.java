@@ -69,4 +69,14 @@ public class Group implements Serializable {
 
     private boolean isChecked;
 
+    public String getParentAddress() {
+        return parentAddress;
+    }
+
+    public void setParentAddress(String parentAddress) {
+        this.parentAddress = parentAddress;
+    }
+
+    private String parentAddress;
+
 }

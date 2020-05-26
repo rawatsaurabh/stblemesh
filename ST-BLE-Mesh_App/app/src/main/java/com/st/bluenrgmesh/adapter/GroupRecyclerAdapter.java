@@ -595,6 +595,7 @@ public class GroupRecyclerAdapter extends RecyclerView.Adapter<GroupRecyclerAdap
             //via fragment
             Group grp = new Group();
             grp.setAddress(groups.get(position).getAddress());
+            grp.setParentAddress("C000");
             grp.setName(groups.get(position).getName());
             Utils.moveToFragment(((MainActivity)context), new GroupSettingFragment(), grp, 0);
             //Utils.moveToFragment(((MainActivity)context), new NewGroupSettingFragment(), grp, 0);

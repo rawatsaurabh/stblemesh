@@ -115,6 +115,29 @@ public class MeshRootClass implements Serializable, Cloneable{
     public ArrayList<Group> getGroups() { return this.groups; }
 
     public void setGroups(ArrayList<Group> groups) { this.groups = groups; }
+    private String id,version,timestamp;
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 }
