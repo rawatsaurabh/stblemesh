@@ -219,7 +219,28 @@ public class Nodes implements Serializable, Comparable<Nodes> , Cloneable{
 
 
 
+    private String unicastAddress;
 
+    public String getUnicastAddress() { return this.unicastAddress; }
+
+    public void setUnicastAddress(String unicastAddress) { this.unicastAddress = unicastAddress; }
+    private String security;
+
+    public String getSecurity() { return this.security; }
+
+    public void setSecurity(String security) { this.security = security; }
+
+    private int defaultTTL;
+
+    public int getDefaultTTL() { return this.defaultTTL; }
+
+    public void setDefaultTTL(int defaultTTL) { this.defaultTTL = defaultTTL; }
+
+    private String networkTransmit;
+
+    public String getNetworkTransmit() { return this.networkTransmit; }
+
+    public void setNetworkTransmit(String networkTransmit) { this.networkTransmit = networkTransmit; }
 
 
 

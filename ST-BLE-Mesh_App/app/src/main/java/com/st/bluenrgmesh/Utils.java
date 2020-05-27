@@ -3291,6 +3291,9 @@ public class Utils {
         node.setElements(elements);
         node.setUUID(currentProvisner.getUUID().toString());
         node.setName(currentProvisner.getProvisionerName());
+        node.setSecurity("high");
+        node.setUnicastAddress(Utils.getProvisionerUnicastLowAddress(context));
+        node.setDefaultTTL(3);
        // Log.e("Dinesh==>Utils 3282  ",currentProvisner.getProvisionerName());
         node.setBlacklisted(false);
         node.setConfigComplete(false);
@@ -4776,6 +4779,9 @@ public class Utils {
                         nodeSelected.setType(meshRootClass.getNodes().get(i).getType());
                         nodeSelected.setSubtitle(meshRootClass.getNodes().get(i).getSubtitle());
                         nodeSelected.setVid(meshRootClass.getNodes().get(i).getVid());
+                        nodeSelected.setSecurity("high");
+                        nodeSelected.setUnicastAddress(meshRootClass.getNodes().get(i).getM_address());
+                        nodeSelected.setDefaultTTL(3);
                         nodes.add(nodeSelected);
                     }
                 }

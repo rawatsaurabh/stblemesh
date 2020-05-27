@@ -689,6 +689,9 @@ try {
         currentNode.setAddress(mAutoAddress + "");
         currentNode.setConfigured("false");
         currentNode.setConfigComplete(false);
+        currentNode.setSecurity("high");
+        currentNode.setUnicastAddress(mAutoAddress);
+        currentNode.setDefaultTTL(3);
         currentNode.setSubtitle("");
         if (mAutoDevice != null) {
             currentNode.setM_address(mAutoDevice.getAddress() + "");

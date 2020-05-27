@@ -140,4 +140,15 @@ public class MeshRootClass implements Serializable, Cloneable{
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    public AllocatedScene getAllocatedScene() {
+        return allocatedScene;
+    }
+
+    public void setAllocatedScene(AllocatedScene allocatedScene) {
+        this.allocatedScene = allocatedScene;
+    }
+
+    private AllocatedScene allocatedScene;
+
 }

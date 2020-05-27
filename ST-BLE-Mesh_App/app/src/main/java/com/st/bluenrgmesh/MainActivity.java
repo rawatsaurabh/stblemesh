@@ -1834,6 +1834,9 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
                     && !device.getUuid().equals("") && device.getUuid().length < 30) {
                 final Nodes node = new Nodes(0);
                 node.setUUID(Utils.array2string(device.getUuid()) + "");
+                node.setSecurity("high");
+                node.setUnicastAddress(device.getAddress().toString());
+                node.setDefaultTTL(3);
                 node.setAddress(device.getAddress().toString());
                 node.setRssi(String.valueOf(device.getmRssi()));
                 node.setmOOBInformation(device.getOOBInformation());

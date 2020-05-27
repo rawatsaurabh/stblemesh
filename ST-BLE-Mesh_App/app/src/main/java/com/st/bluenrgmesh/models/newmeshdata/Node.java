@@ -159,4 +159,6 @@ public class Node implements Serializable {
     public boolean getBlacklisted() { return this.blacklisted; }
 
     public void setBlacklisted(boolean blacklisted) { this.blacklisted = blacklisted; }
+
+
 }
