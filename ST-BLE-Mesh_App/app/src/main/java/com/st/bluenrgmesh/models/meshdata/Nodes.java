@@ -385,6 +385,33 @@ public class Nodes implements Serializable, Comparable<Nodes> , Cloneable{
         isChecked = checked;
     }
 
+    public int getCredential() {
+        return credential;
+    }
 
+    public void setCredential(int credential) {
+        this.credential = credential;
+    }
 
+    private int credential;
+
+    public Bind getBind() {
+        return bind;
+    }
+
+    public void setBind(Bind bind) {
+        this.bind = bind;
+    }
+
+    private Bind bind;
+
+    public Publish getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Publish publish) {
+        this.publish = publish;
+    }
+
+    private Publish publish;
 }
