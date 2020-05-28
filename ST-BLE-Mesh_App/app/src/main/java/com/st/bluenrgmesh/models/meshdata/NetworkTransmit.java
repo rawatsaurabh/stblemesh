@@ -44,7 +44,15 @@ import java.io.Serializable;
 
 
 class NetworkTransmit implements Serializable {
+    public int getInterval() {
+        return interval;
+    }
 
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
+
+    private int interval;
     private int count;
 
     public int getCount() {

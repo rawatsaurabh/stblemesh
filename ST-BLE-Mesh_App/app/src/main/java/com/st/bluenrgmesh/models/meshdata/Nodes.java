@@ -236,11 +236,11 @@ public class Nodes implements Serializable, Comparable<Nodes> , Cloneable{
 
     public void setDefaultTTL(int defaultTTL) { this.defaultTTL = defaultTTL; }
 
-    private String networkTransmit;
+    private NetworkTransmit networkTransmit;
 
-    public String getNetworkTransmit() { return this.networkTransmit; }
+    public NetworkTransmit getNetworkTransmit() { return this.networkTransmit; }
 
-    public void setNetworkTransmit(String networkTransmit) { this.networkTransmit = networkTransmit; }
+    public void setNetworkTransmit(NetworkTransmit networkTransmit) { this.networkTransmit = networkTransmit; }
 
 
 
