@@ -657,15 +657,25 @@ public class ProvisionedTabFragment extends BaseFragment {
         ApplicationParameters.Address address = new ApplicationParameters.Address(2);
 
         ApplicationParameters.PropertyID propertyID = new ApplicationParameters.PropertyID(Integer.parseInt(setpropertyIDET.getText().toString()));
+        ApplicationParameters.PropertyValue  propertyVal = new ApplicationParameters.PropertyValue(12);//TODO : change Appropriately
 
-        mLightLCModeModelClient.setLightLCProperty(false, address, propertyID, null);
+        mLightLCModeModelClient.setLightLCProperty(false, address, propertyID,propertyVal, null);
 
     }
 
     LightControlModeClient.LightLCPropertylStatusCallback lightLCPropertylStatusCallback = new LightControlModeClient.LightLCPropertylStatusCallback() {
         @Override
-        public void onLightLCPropertyStatus(boolean b, ApplicationParameters.PropertyID propertyID) {
-            Log.d("LC mode", "propertyID=>" + propertyID);
+        public void onLightLCPropertyStatus(boolean timeout, ApplicationParameters.PropertyID propertyID,
+                                            ApplicationParameters.PropertyValue propertyVal) {
+
+            if(timeout){
+                Log.d("LC mode","Timeout : " + timeout);
+            }
+            else {
+                Log.d("LC mode","<<LightingLCServer  Model  => LightLCPropertylStatus => propertyID : " + propertyID);
+                Log.d("LC mode","<<LightingLCServer  Model  => LightLCPropertylStatus => propertyID : " + propertyVal);;
+
+            }
 
         }
     };
