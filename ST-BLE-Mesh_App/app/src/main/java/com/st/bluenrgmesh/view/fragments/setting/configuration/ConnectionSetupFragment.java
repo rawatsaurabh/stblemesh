@@ -690,7 +690,7 @@ try {
         currentNode.setConfigured("false");
         currentNode.setConfigComplete(false);
         currentNode.setSecurity("high");
-        currentNode.setUnicastAddress(mAutoAddress);
+        currentNode.setUnicastAddress(mAutoDevice.getAddress() + "");
         currentNode.setDefaultTTL(3);
         currentNode.setSubtitle("");
         if (mAutoDevice != null) {
@@ -721,6 +721,8 @@ try {
             e.printStackTrace();
         }
         currentNode.setNumberOfElements(((MainActivity)getActivity()).elementsSize);
+        //currentNode.setNumberOfElements(((MainActivity)getActivity()).elementsSize);
+
         newElements = Utils.designElementsForCurrentNode(getActivity(), currentNode, meshRootClass);
         currentNode.setElements(newElements);
         Utils.setProvisionedNodeData(getActivity(), currentNode, meshRootClass);

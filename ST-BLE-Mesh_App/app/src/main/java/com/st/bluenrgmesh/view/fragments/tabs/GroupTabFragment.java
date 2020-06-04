@@ -165,7 +165,7 @@ public class GroupTabFragment extends BaseFragment {
         Group group = new Group();
         group.setName("All Nodes");
         group.setAddress("FFFF");
-        group.setParentAddress("0000");
+        group.setParentAddress("0x0000");
         groups.add(group);
     }
 

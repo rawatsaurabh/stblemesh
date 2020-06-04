@@ -1554,7 +1554,7 @@ public class Utils {
         Group group = new Group();
         group.setAddress(String.valueOf(addr));
         group.setName(groupName);
-        group.setParentAddress("C000");
+        group.setParentAddress("0x0000");
         if (messRootClass.getGroups() == null) {
             ArrayList<Group> groups = new ArrayList<>();
             groups.add(group);
@@ -1875,14 +1875,14 @@ public class Utils {
     }
 
     public static void updateProvisionerNetAppKeys(Context context, MeshRootClass meshRootClass, String meshName, String meshUUID, String appKeysStr, String networkKey, boolean isNewJoiner) {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        //Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         ArrayList<NetKey> arrayList = new ArrayList<>();
         NetKey netKey = new NetKey();
         netKey.setIndex(0);
         netKey.setKey(networkKey);
-        netKey.setTimestamp("" + timestamp);
-        netKey.setMinSecurity("High");
-        netKey.setPhase(0);
+        //netKey.setTimestamp("" + timestamp);
+        netKey.setMinSecurity("high");
+        //netKey.setPhase(0);  //TODO - Q2 Relase needs to change phase and according to that timestamp --> key refresh
         arrayList.add(netKey);
 
         ArrayList<AppKey> appKeys = new ArrayList<>();
@@ -1952,6 +1952,7 @@ public class Utils {
             element.setParentNodeName(currentNode.getName());
             element.setElementName("Element " + (i + 1));
             element.setName("Element " + (i + 1));
+            //element.setLocation(String.valueOf(count));
             elements.add(element);
             count++;
         }
@@ -3058,6 +3059,8 @@ public class Utils {
                     if (stringIsHex) {
                         int intUnicast = convertHexToInt(unicastAddress);
                         meshRootClass.getNodes().get(i).getElements().get(j).setUnicastAddress(String.valueOf(intUnicast));
+                        //meshRootClass.getNodes().get(i).getElements().get(j).setLocation(String.valueOf(intUnicast));
+
                     }
 
                     meshRootClass.getNodes().get(i).getElements().get(j).setParentNodeName(meshRootClass.getNodes().get(i).getName());
@@ -3287,6 +3290,8 @@ public class Utils {
         Element element = new Element();
         //element.setUnicastAddress(currentProvisner.getUnicastAddress());
         element.setUnicastAddress(Utils.getProvisionerUnicastLowAddress(context));
+        //element.setLocation(Utils.getProvisionerUnicastLowAddress(context));
+
         elements.add(element);
         node.setElements(elements);
         node.setUUID(currentProvisner.getUUID().toString());
@@ -4753,6 +4758,8 @@ public class Utils {
                         element.setElementName(meshRootClass.getNodes().get(i).getElements().get(j).getName());
                         element.setParentNodeAddress(meshRootClass.getNodes().get(i).getElements().get(j).getParentNodeAddress());
                         element.setUnicastAddress(meshRootClass.getNodes().get(i).getElements().get(j).getUnicastAddress());
+                        //element.setLocation(meshRootClass.getNodes().get(i).getElements().get(j).getUnicastAddress());
+
                         element.setPublished(meshRootClass.getNodes().get(i).getElements().get(j).isPublished);
                         element.setSubscribed(meshRootClass.getNodes().get(i).getElements().get(j).isSubscribed);
                         element.setIndex(meshRootClass.getNodes().get(i).getElements().get(j).getIndex());

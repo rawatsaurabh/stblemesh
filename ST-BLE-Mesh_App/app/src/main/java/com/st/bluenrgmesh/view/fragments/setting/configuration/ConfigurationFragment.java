@@ -171,7 +171,7 @@ public class ConfigurationFragment extends BaseFragment {
                         Group grp = new Group();
                         grp.setAddress(((MainActivity) getActivity()).meshRootClass.getGroups().get(i).getAddress());
                         grp.setName(((MainActivity) getActivity()).meshRootClass.getGroups().get(i).getName());
-                        grp.setParentAddress(((MainActivity) getActivity()).meshRootClass.getGroups().get(i).getAddress());
+                        grp.setParentAddress("0x0000");
 
                         final_publicationNameList.add(grp);
 
@@ -199,7 +199,7 @@ public class ConfigurationFragment extends BaseFragment {
                                 Element element = ((MainActivity) getActivity()).meshRootClass.getNodes().get(i).getElements().get(j);
                                 Group grp = new Group();
                                 grp.setAddress(element.getUnicastAddress());
-                                grp.setParentAddress("C000");
+                                grp.setParentAddress("0x0000");
                                 String elementName =  element.getName() != null ? element.getName() : element.getUnicastAddress();
                                 grp.setName(((MainActivity) getActivity()).meshRootClass.getNodes().get(i).getName() + " / " + elementName);
                                 final_publicationNameList.add(grp);

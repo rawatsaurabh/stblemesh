@@ -42,6 +42,7 @@
 package com.st.bluenrgmesh.models.meshdata;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 
 public class NetKey implements Serializable {
@@ -71,8 +72,12 @@ public class NetKey implements Serializable {
     private int phase;
 
     public int getPhase() { return this.phase; }
-
-    public void setPhase(int phase) { this.phase = phase; }
+    //TODO - Q2 Relase needs to change phase and according to that timestamp --> key refresh
+    public void setPhase(int phase) {
+        this.phase = phase;
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        setTimestamp(""+timestamp);
+    }
 
     private String key;
 

@@ -229,13 +229,14 @@ public class Nodes implements Serializable, Comparable<Nodes> , Cloneable{
     public String getSecurity() { return this.security; }
 
     public void setSecurity(String security) { this.security = security; }
-
+    //TODO optional field
     private int defaultTTL;
 
     public int getDefaultTTL() { return this.defaultTTL; }
 
     public void setDefaultTTL(int defaultTTL) { this.defaultTTL = defaultTTL; }
 
+    //TODO optional field
     private NetworkTransmit networkTransmit;
 
     public NetworkTransmit getNetworkTransmit() { return this.networkTransmit; }

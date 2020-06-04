@@ -2,17 +2,15 @@
 package com.st.bluenrgmesh.models.meshdata;
 
 import java.util.List;
-import com.google.gson.annotations.Expose;
 
 public class Items {
 
-    @Expose
     private Boolean additionalProperties;
-    @Expose
+    
     private Properties properties;
-    @Expose
+    
     private List<String> required;
-    @Expose
+    
     private String type;
 
     public Boolean getAdditionalProperties() {

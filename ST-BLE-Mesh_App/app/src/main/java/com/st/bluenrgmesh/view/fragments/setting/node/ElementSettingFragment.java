@@ -716,6 +716,8 @@ public class ElementSettingFragment extends BaseFragment implements RecyclerItem
         elementBySelectedModel.setParentNodeName(element.getParentNodeName());
         elementBySelectedModel.setParentNodeAddress(element.getParentNodeAddress());
         elementBySelectedModel.setUnicastAddress(element.getUnicastAddress());
+        //elementBySelectedModel.setLocation(element.getUnicastAddress());
+
         elementBySelectedModel.setChecked(element.isChecked());
         elementBySelectedModel.setConfigured(element.isConfigured);
         elementBySelectedModel.setAppKeys(element.getAppKeys());
