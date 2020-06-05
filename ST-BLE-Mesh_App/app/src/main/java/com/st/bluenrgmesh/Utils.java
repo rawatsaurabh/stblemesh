@@ -1952,7 +1952,7 @@ public class Utils {
             element.setParentNodeName(currentNode.getName());
             element.setElementName("Element " + (i + 1));
             element.setName("Element " + (i + 1));
-            //element.setLocation(String.valueOf(count));
+            element.setLocation(String.valueOf((i + 1)));
             elements.add(element);
             count++;
         }
@@ -4762,7 +4762,7 @@ public class Utils {
 
                         element.setPublished(meshRootClass.getNodes().get(i).getElements().get(j).isPublished);
                         element.setSubscribed(meshRootClass.getNodes().get(i).getElements().get(j).isSubscribed);
-                        element.setIndex(meshRootClass.getNodes().get(i).getElements().get(j).getIndex());
+                        element.setIndex(j);
                         elements.add(element);
                     }
 
