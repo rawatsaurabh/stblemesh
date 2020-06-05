@@ -1,8 +1,7 @@
 package com.st.bluenrgmes;
 
 import android.content.Context
-import android.content.Intent
-import androidx.core.content.FileProvider
+import android.os.Environment
 import com.st.bluenrgmesh.R
 import com.st.bluenrgmesh.Utils
 import java.io.File
@@ -10,10 +9,12 @@ import java.io.PrintWriter
 
 class CustomUtilities {
 
-    fun createFileStorage(context : Context) {
-        var meshedStringData = Utils.filterJsonObject(context)
+    fun createFileStorage(context : Context, meshedStringData : String) {
+        //var meshedStringData = Utils.filterJsonObject(context)
         var sd_main = File(context.filesDir,"stblueNrg")
         var success = true
+
+        var descPath = Environment.getExternalStorageDirectory().absolutePath + "/Download/"
 
         if (!sd_main.exists())
             success = sd_main.mkdir()

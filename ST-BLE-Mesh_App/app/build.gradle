@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    implementation (name: 'MobleLibrary-release', ext: 'aar')
+    implementation (name: 'MobleLibrary-debug', ext: 'aar')
 
     implementation "androidx.annotation:annotation:$rootProject.androidx_annotationVersion"
     implementation "androidx.appcompat:appcompat:$rootProject.androidx_appCompatVersion"

@@ -40,20 +40,30 @@
 
 package com.st.bluenrgmesh.view.fragments.setting;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -66,6 +76,7 @@ import com.st.bluenrgmesh.Utils;
 import com.st.bluenrgmesh.models.clouddata.CloudResponseData;
 import com.st.bluenrgmesh.models.meshdata.Nodes;
 import com.st.bluenrgmesh.parser.ParseManager;
+import com.st.bluenrgmesh.utils.AllConstants;
 import com.st.bluenrgmesh.utils.AppDialogLoader;
 import com.st.bluenrgmesh.utils.MyJsonObjectRequest;
 import com.st.bluenrgmesh.view.fragments.base.BaseFragment;
@@ -74,13 +85,23 @@ import com.st.bluenrgmesh.view.fragments.cloud.JoinAndRegisterNetworkFragment;
 import com.st.bluenrgmesh.view.fragments.cloud.login.LoginDetailsFragment;
 import com.st.bluenrgmesh.view.fragments.tabs.GroupTabFragment;
 import com.st.bluenrgmesh.view.fragments.tabs.ProvisionedTabFragment;
+import com.st.bluenrgmesh.voicereceiver.BluetoothMeshTransferService;
+import com.st.bluenrgmesh.voicereceiver.Constants;
 
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentActivity;
+
+import static com.st.BlueSTSDK.Utils.BlePermissionHelper.REQUEST_ENABLE_BT;
 
 
 public class ExchangeConfigFragment extends BaseFragment {
@@ -90,19 +111,97 @@ public class ExchangeConfigFragment extends BaseFragment {
     Button import_config_button;
     Button export_config_button;
     Button delete_config_button;
+    Button discovery_enable_button;
     private View view;
     Context context;
+    public BluetoothMeshTransferService mTransferService = null;
+    BluetoothAdapter mBluetoothAdapter = null;
+    private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
+    private static final int REQUEST_CONNECT_DEVICE_INSECURE = 2;
+    boolean isSend = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.import_export_config_new, container, false);
         context = container.getContext();
-
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         Utils.updateActionBarForFeatures(getActivity(), new ExchangeConfigFragment().getClass().getName());
         loader = AppDialogLoader.getLoader(getActivity());
         initUi();
 
         return view;
+    }
+
+    @SuppressLint("MissingPermission")
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mBluetoothAdapter == null) {
+            return;
+        }
+        // If BT is not on, request that it be enabled.
+        // setupChat() will then be called during onActivityResult
+        if (!mBluetoothAdapter.isEnabled()) {
+            Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
+            // Otherwise, setup the chat session
+        } else if (mTransferService == null) {
+            setupChat();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(!(AllConstants.deviceAddress.isEmpty())){
+            connectDevice(AllConstants.deviceAddress,true);
+        }
+        else{
+            if (mTransferService != null) {
+                // Only if the state is STATE_NONE, do we know that we haven't started already
+                if (mTransferService.getState() == BluetoothMeshTransferService.STATE_NONE) {
+                    // Start the Bluetooth chat services
+                    mTransferService.start();
+                }
+            }
+        }
+    }
+
+    private void setupChat() {
+        // Initialize the array adapter for the conversation thread
+        FragmentActivity activity = getActivity();
+        if (activity == null) {
+            return;
+        }
+        mTransferService = new BluetoothMeshTransferService(activity, mHandler);
+    }
+
+    @SuppressLint("MissingPermission")
+    private void ensureDiscoverable() {
+        if (mBluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
+            Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+            startActivity(discoverableIntent);
+        }
+        else{
+            Toast.makeText(context,"Device is now discoverable",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void sendMessageString(String message) {
+        // Check that we're actually connected before trying anything
+        if (mTransferService.getState() != BluetoothMeshTransferService.STATE_CONNECTED) {
+            Toast.makeText(getActivity(), "Device not connected", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (message.length() > 0) {
+            // Get the message bytes and tell the BluetoothChatService to write
+            byte[] send = message.getBytes();
+            Log.d("Aman Saxena Connected",message);
+            Log.d("Aman Saxena Connected",String.valueOf(send.length));
+            mTransferService.write(send);
+        }
     }
 
     private void initUi() {
@@ -161,8 +260,18 @@ public class ExchangeConfigFragment extends BaseFragment {
             }
         });
 
+        discovery_enable_button = (Button) view.findViewById(R.id.discovery_enable_button);
+        discovery_enable_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                ensureDiscoverable();
+                isSend = false;
+            }
+        });
+
         import_config_button = (Button) view.findViewById(R.id.import_config_button);
         import_config_button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
                 if (vibrator != null) vibrator.vibrate(40);
@@ -181,7 +290,7 @@ public class ExchangeConfigFragment extends BaseFragment {
                                 loader.hide();
                                 ((MainActivity)getActivity()).onBackPressed();
                             }
-                        },500);
+                        },1000);
                     }
                 });
                 builder.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
@@ -196,18 +305,24 @@ public class ExchangeConfigFragment extends BaseFragment {
 
         export_config_button = (Button) view.findViewById(R.id.export_config_button);
         export_config_button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
                 if (vibrator != null) vibrator.vibrate(40);
 
-                ((MainActivity)getActivity()).onBackPressed();
-                sendDataToOtherDevice();
+                isSend = true;
+                Intent serverIntent = new Intent(getActivity(), BluetoothConnectFragment.class);
+                startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
+
+               /* ((MainActivity)getActivity()).onBackPressed();
+                sendDataToOtherDevice();*/
                /* Utils.sendDataOverMail(getActivity());*/
             }
         });
 
         delete_config_button = (Button) view.findViewById(R.id.delete_config_button);
         delete_config_button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
                 if (vibrator != null) vibrator.vibrate(40);
@@ -364,7 +479,7 @@ public class ExchangeConfigFragment extends BaseFragment {
 
     public void sendDataToOtherDevice(){
         CustomUtilities customUtilities = new CustomUtilities();
-        customUtilities.createFileStorage(context);
+        customUtilities.createFileStorage(context,"");
 
         String filePath = context.getFilesDir().toString() + "/stblueNrg/" + context.getResources().getString(R.string.FILE_bluenrg_mesh_json);
         File file = new File(filePath);
@@ -381,5 +496,112 @@ public class ExchangeConfigFragment extends BaseFragment {
         intent.putExtra(Intent.EXTRA_STREAM, uri);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(intent);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mTransferService != null) {
+            mTransferService.stop();
+            AllConstants.deviceAddress = "";
+            AllConstants.meshedString = "";
+        }
+    }
+
+    private void connectDevice(String address, boolean secure) {
+        BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
+        AllConstants.deviceAddress = "";
+        mTransferService.connect(device, secure);
+    }
+
+    private final Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            FragmentActivity activity = getActivity();
+            switch (msg.what) {
+                case Constants.MESSAGE_STATE_CHANGE:
+                    switch (msg.arg1) {
+                        case BluetoothMeshTransferService.STATE_CONNECTED:
+                            if(isSend){
+                                String meshedStringData = Utils.filterJsonObject(context);
+                                sendMessageString(meshedStringData);
+                            }
+                            break;
+                        case BluetoothMeshTransferService.STATE_CONNECTING:
+                            break;
+                        case BluetoothMeshTransferService.STATE_LISTEN:
+                        case BluetoothMeshTransferService.STATE_NONE:
+                            break;
+                    }
+                    break;
+                case Constants.MESSAGE_WRITE:
+                    byte[] writeBuf = (byte[]) msg.obj;
+                    String writeMessage = new String(writeBuf);
+                    Log.d("Aman Saxena Write",String.valueOf(writeBuf.length));
+
+                    Log.d("Aman Saxena Write",writeMessage);
+                    Toast.makeText(context,"Mesh Config File Transfered",Toast.LENGTH_SHORT).show();
+                    break;
+                case Constants.MESSAGE_READ:
+                    byte[] readBuf = (byte[]) msg.obj;
+                    Log.d("Aman Saxena Read",String.valueOf(readBuf.length));
+                    String readMessage = new String(readBuf, 0, msg.arg1);
+                    Log.d("Aman Saxena Read",readMessage);
+
+
+                    String temp = AllConstants.meshedString;
+                    AllConstants.meshedString = temp + readMessage;
+                    readMessage = AllConstants.meshedString;
+
+                    CustomUtilities customUtilities = new CustomUtilities();
+                    customUtilities.createFileStorage(context,readMessage);
+
+                    String filePath = context.getFilesDir().toString() + "/stblueNrg/" + context.getResources().getString(R.string.FILE_bluenrg_mesh_json);
+                    File source = new File(filePath);
+
+                    String descPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/";
+                    File desc = new File(descPath);
+                    try
+                    {
+                        moveFile(source,desc);
+                        Toast.makeText(context, "Mesh Config File Received", Toast.LENGTH_SHORT).show();
+                    }
+
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    break;
+                case Constants.MESSAGE_DEVICE_NAME:
+                    String mConnectedDeviceName = msg.getData().getString(Constants.DEVICE_NAME);
+                    if (null != activity) {
+                        Toast.makeText(activity, "Connected to " + mConnectedDeviceName, Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+
+                case Constants.MESSAGE_TOAST:
+                    if (null != activity) {
+                        Toast.makeText(activity, msg.getData().getString(Constants.TOAST), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+    };
+
+    public static void moveFile(File srcFileOrDirectory, File desFileOrDirectory) throws IOException {
+        File newFile = new File(desFileOrDirectory, srcFileOrDirectory.getName());
+        try (FileChannel outputChannel = new FileOutputStream(newFile).getChannel();
+             FileChannel inputChannel = new FileInputStream(srcFileOrDirectory).getChannel()) {
+            inputChannel.transferTo(0, inputChannel.size(), outputChannel);
+            inputChannel.close();
+            deleteRecursive(srcFileOrDirectory);
+        }
+    }
+
+    private static void deleteRecursive(File fileOrDirectory) {
+        if (fileOrDirectory.isDirectory())
+            for (File child : Objects.requireNonNull(fileOrDirectory.listFiles()))
+                deleteRecursive(child);
+        fileOrDirectory.delete();
     }
 }

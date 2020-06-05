@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 
+import com.st.bluenrgmes.CustomUtilities;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,11 +23,12 @@ public class BluetoothConnectionReceiver  extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent){
 
-        if(BluetoothDevice.ACTION_ACL_CONNECTED.equals(intent.getAction()))
+       /* if(BluetoothDevice.ACTION_ACL_CONNECTED.equals(intent.getAction()))
         {
             int a = 0;
         }else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(intent.getAction()))
         {
+
             String sourcePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/bluetooth/bluenrg-mesh_configuration.json";
             File source = new File(sourcePath);
 
@@ -40,7 +43,7 @@ public class BluetoothConnectionReceiver  extends BroadcastReceiver {
             {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 
     public static void moveFile(File srcFileOrDirectory, File desFileOrDirectory) throws IOException {

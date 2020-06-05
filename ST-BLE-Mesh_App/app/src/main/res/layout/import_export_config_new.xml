@@ -66,6 +66,19 @@
         android:textAllCaps="false"/>
 
     <Button
+        android:id="@+id/discovery_enable_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Make Discoverable"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:textColor="@color/ST_BLUE_DARK"
+        android:background="@drawable/round_model_background"
+        android:backgroundTint="@color/color_gray_light4"
+        android:textAllCaps="false"/>
+
+    <Button
         android:id="@+id/delete_config_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

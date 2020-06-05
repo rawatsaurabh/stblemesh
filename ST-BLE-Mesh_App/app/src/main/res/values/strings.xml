@@ -150,7 +150,6 @@
     <string name="MODEL_ID_1102_SENSOR_CLIENT">1102</string>
 
 
-
     <string name="MODEL_ID_00010030_VENDOR_MODEL">00010030</string>
     <string name="MODEL_ID_00300001_VENDOR_MODEL">00300001</string>
     <string name="MODEL_ID_10030_VENDOR_MODEL">10030</string>
@@ -272,7 +271,7 @@
     <string name="key_network_name">KEY NETWORK NAME</string>
     <string name="key_isScreenIntro">KEY SCREEN INTRO</string>
     <string name="str_logs_label">Logs</string>
-    <string name="str_subscribed_success_label" >Subscribed Successfully</string>
+    <string name="str_subscribed_success_label">Subscribed Successfully</string>
     <string name="str_unsubscribed_label">Unsubscribed Successfully</string>
     <string name="key_provisioner_group_low_address">Provisioner Group Low Address</string>
     <string name="key_provisioner_group_high_address">Provisioner Group High Address</string>
@@ -352,22 +351,22 @@
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
     <string name="tap_on_mic">Tap on mic to speak</string>
     <string name="key_enable_logs_value">enablelogs</string>
-    <string name="urllink1" >
+    <string name="urllink1">
         <a href="https://github.com/google/gson">https://github.com/google/gson</a>
     </string>
-    <string name="urllink6" >
+    <string name="urllink6">
         <a href="https://get.fabric.io/">https://get.fabric.io/</a>
     </string>
-    <string name="urllink2" >
+    <string name="urllink2">
         <a href="https://github.com/google/volley">https://github.com/google/volley</a>
     </string>
-    <string name="urllink3" >
+    <string name="urllink3">
         <a href="https://github.com/booncol/Pulsator4Droid">https://github.com/booncol/Pulsator4Droid</a>
     </string>
-    <string name="urllink4" >
+    <string name="urllink4">
         <a href="https://github.com/hdodenhof/CircleImageView">https://github.com/hdodenhof/CircleImageView</a>
     </string>
-    <string name="urllink5" >
+    <string name="urllink5">
         <a href="https://github.com/bumptech/glide">https://github.com/bumptech/glide</a>
     </string>
     <string name="software_components_label">Software Components</string>
@@ -424,5 +423,15 @@
     <string name="node_head">Node Tab</string>
     <string name="node_msg">All the Provisioned and Configured Nodes appears here. Control your device and Change its Configuration  from the Element Setting icon.</string>
     <string name="key_isVendorModelTabCommand">KEY VENDOR ENABLED Tab</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
 
 </resources>

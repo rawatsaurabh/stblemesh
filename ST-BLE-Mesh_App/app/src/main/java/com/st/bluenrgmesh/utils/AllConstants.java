@@ -50,6 +50,7 @@ public class AllConstants
     public static final String BOOL_ISQUICKPROCESS = ".ISQUICKPROCESS";
     public static final String RESULT_DATA_KEY = ".RESULT_DATA_KEY";
     public static final String RESULT_ADDRESS_KEY = ".RESULT_ADDRESS_KEY";
-
+    public static String deviceAddress = "";
+    public static String meshedString = "";
 
 }
