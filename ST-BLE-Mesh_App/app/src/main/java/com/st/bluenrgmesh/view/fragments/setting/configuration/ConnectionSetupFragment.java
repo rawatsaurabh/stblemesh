@@ -323,7 +323,7 @@ try {
 
     public void configureDevice(String bt_addr,String name) {
         ((MainActivity)getActivity()).isProvisioningProcessLive = true;
-        if(!name.equalsIgnoreCase("")){
+        if(!"".equalsIgnoreCase(name)){
             ((MainActivity) getActivity()).mAutoName = name;
             mAutoName = name;
         }else {
